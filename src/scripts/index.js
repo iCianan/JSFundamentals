@@ -1,54 +1,31 @@
-import { relative } from "path";
-import { callbackify } from "util";
-
-let al = (function(){
-    let carId = 213;
-    let getId = function(){
-        return carId;
-    };
-    let updateId = function(newId){
-        carId = newId;
-        return carId;
-    };
-    return {
-        getId: getId,
-        updateId: updateId
-    };
-})();
-console.log(al.getId());
-console.log(al.updateId(123));
-console.log(al.getId());
-
-let susan = {
-    peopleId : 512,
-    lastName: 'Johnson',
-    getPeopleId: function(){
-        console.log(this);       
-        return this.peopleId;         
-    },
-    updatePeopleId: function(newUd){
-        this.peopleId = newUd;
-        console.log(this);
-        return this.peopleId;
-    }
+let Car = {
+    carId: 123,
+    style: 'coupe',
+    transmission: 'manual'
 };
 
-let joe = { peopleId: 1024 };
-let joeFn = susan.getPeopleId.bind(joe);
-console.log('ID: '+ joe.peopleId);
-console.log(susan.getPeopleId());
-console.log(joeFn() );
+function Plane(id, type){
+    this.planeId = id;
+    this.engineType = type;
+}
 
-
-
-let a3 = {
-    carId : 23,
-    getId:  () => {
-        return this.carId;
-    },
-    updateId: function(newId){
-        carId = newId;
-        return this.carId;
-    }
+String.prototype.hello = function() {
+    return this + " Hello sir";
 };
-console.log(a3.getId());
+
+Plane.prototype.start = function() {
+    console.log('Starting...' + this.engineType);
+};
+
+Car.prototype.fail = function() {
+    console.log('Starting...' + this.transmission);
+};
+
+console.log(JSON.stringify(Car));
+
+console.log('lol'.hello());
+
+let hellcat = new Plane(123, 'V16');
+hellcat.start();
+
+Car.fail();
