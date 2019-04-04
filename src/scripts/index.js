@@ -1,4 +1,5 @@
 import { relative } from "path";
+import { callbackify } from "util";
 
 let al = (function(){
     let carId = 213;
@@ -20,17 +21,34 @@ console.log(al.getId());
 
 let susan = {
     peopleId : 512,
+    lastName: 'Johnson',
     getPeopleId: function(){
-        return this.peopleId;
+        console.log(this);       
+        return this.peopleId;         
     },
     updatePeopleId: function(newUd){
         this.peopleId = newUd;
+        console.log(this);
         return this.peopleId;
     }
 };
 
+let joe = { peopleId: 1024 };
+let joeFn = susan.getPeopleId.bind(joe);
+console.log('ID: '+ joe.peopleId);
 console.log(susan.getPeopleId());
+console.log(joeFn() );
 
-console.log(susan.updatePeopleId(256));
 
-console.log(susan.getPeopleId());
+
+let a3 = {
+    carId : 23,
+    getId:  () => {
+        return this.carId;
+    },
+    updateId: function(newId){
+        carId = newId;
+        return this.carId;
+    }
+};
+console.log(a3.getId());
