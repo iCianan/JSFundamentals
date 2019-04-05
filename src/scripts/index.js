@@ -1,4 +1,5 @@
 import { relative } from "path";
+import {Planet} from './models/planet.js';
 
 let Car = {
     carId: 123,
@@ -28,36 +29,27 @@ console.log('lol'.hello());
 let hellcat = new Plane(123, 'V16');
 hellcat.start();
 
-
-
-class Planet{
-    constructor(){
-        this.type = 'gas';
-    }
-    rotate(){
-        return console.log(`Rotating: ${this.type}`);
-    }
-}
+let planet = new Planet();
 
 class Earth extends Planet{
-    constructor() {
-        super();
-        this.type = 'rock';
-    }
     rotate(){
         return console.log('Rotating: for 24 hours');
     }
 }
-class Jupiter extends Planet{
-    rotate(){
-        return console.log('Rotating: for 10 hours');
-    }
-}
-let earth = new Earth();
+
+let earth = new Earth(123);
 earth.rotate();
 console.log(earth.type);
+// class Jupiter extends Planet{
+//     rotate(){
+//         return console.log('Rotating: for 10 hours');
+//     }
+// }
+// let earth = new Earth();
+// earth.rotate();
+// console.log(earth.type);
 
 
-let jupiter = new Jupiter();
-jupiter.rotate();
-console.log(jupiter.type);
+// let jupiter = new Jupiter();
+// jupiter.rotate();
+// console.log(jupiter.type);
