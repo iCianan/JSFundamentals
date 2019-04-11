@@ -1,5 +1,8 @@
 export class Planet {
     constructor(){
-        this.type = 'gas';
+        this.climate = null;
+        this.name = null;
+        this.url = null;
+        this.climate = null;
     }
 }
