@@ -31,9 +31,6 @@ let person = new Person();
 //     error => console.log('error ', error)
 // );
 
-
-
-
 fetch("https://swapi.co/api/people/1")
     .then(response => response.json())
     .then(data => {
