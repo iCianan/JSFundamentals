@@ -1,17 +1,22 @@
-import $ from 'jquery';
-import {Planet} from './models/planet';
-import {Person} from './models/person';
-
-
+import $ from "jquery";
+import { Planet } from "./models/planet";
+import { Person } from "./models/person";
+import { HashTable } from "./models/hashtable";
 
 let planet = new Planet();
 let person = new Person();
+let ht = new HashTable();
+ht.set("google", "Pixel");
+ht.set("apple", "iPhone");
+ht.set("google", "Nexus 5x");
 
+ht.get("google");
+//ht.get("apple");
 
 // let promise = $.get("https://swapi.co/api/people/1");
 // promise.then(
 //     data => console.log('success: ', data),
-//     error => console.log('error: ', error)    
+//     error => console.log('error: ', error)
 // );
 
 // console.log(promise);
@@ -32,25 +37,23 @@ let person = new Person();
 // );
 
 fetch("https://swapi.co/api/people/1")
-    .then(response => response.json())
-    .then(data => {
-        person.name = data.name;
-        person.birthYear = data.birth_year;
-        planet.url = data.homeworld;
-        fetch(planet.url)
-        .then(response => response.json())
-        .then(data => {
-            planet.name = data.name;
-            planet.climate = data.climate;
-            person.homePlanet = planet.name;
-        })
-        .catch(error => console.log('error: ', error)); 
-    })
-    .catch(error => console.log('error: ', error));     
+  .then(response => response.json())
+  .then(data => {
+    person.name = data.name;
+    person.birthYear = data.birth_year;
+    planet.url = data.homeworld;
+    fetch(planet.url)
+      .then(response => response.json())
+      .then(data => {
+        planet.name = data.name;
+        planet.climate = data.climate;
+        person.homePlanet = planet.name;
+      })
+      .catch(error => console.log("error: ", error));
+  })
+  .catch(error => console.log("error: ", error));
 
-    setTimeout(() => {
-        console.log(planet);
-        console.log(person);
-        }, 5000);
-
- 
+setTimeout(() => {
+  console.log(planet);
+  console.log(person);
+}, 5000);
