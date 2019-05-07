@@ -2,15 +2,21 @@ import $ from "jquery";
 import { Planet } from "./models/planet";
 import { Person } from "./models/person";
 import { HashTable } from "./models/hashtable";
+import { LinkedList } from "./models/linkedList";
 
 let planet = new Planet();
 let person = new Person();
 let ht = new HashTable();
+let ll = new LinkedList();
+
 ht.set("google", "Pixel");
 ht.set("apple", "iPhone");
 ht.set("google", "Nexus 5x");
-
 ht.get("google");
+
+ll.insert(5);
+ll.insert(10);
+ll.insert(23);
 //ht.get("apple");
 
 // let promise = $.get("https://swapi.co/api/people/1");
@@ -56,4 +62,5 @@ fetch("https://swapi.co/api/people/1")
 setTimeout(() => {
   console.log(planet);
   console.log(person);
+  console.log(ll);
 }, 5000);
