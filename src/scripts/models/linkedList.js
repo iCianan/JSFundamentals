@@ -10,7 +10,6 @@ export class LinkedList {
       this.root = newNode;
       return newNode;
     }
-    debugger;
     let current = this.root;
     while (current.children[0]) {
       current = current.children[0];

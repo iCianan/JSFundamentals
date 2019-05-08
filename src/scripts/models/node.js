@@ -1,6 +1,6 @@
 export class Node {
-  constructor(data, size) {
+  constructor(data) {
     this.data = data;
-    this.children = new Array(size);
+    this.children = [];
   }
 }

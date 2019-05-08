@@ -3,11 +3,13 @@ import { Planet } from "./models/planet";
 import { Person } from "./models/person";
 import { HashTable } from "./models/hashtable";
 import { LinkedList } from "./models/linkedList";
+import { Stack } from "./models/stack";
 
 let planet = new Planet();
 let person = new Person();
 let ht = new HashTable();
 let ll = new LinkedList();
+let stack = new Stack();
 
 ht.set("google", "Pixel");
 ht.set("apple", "iPhone");
@@ -17,6 +19,11 @@ ht.get("google");
 ll.insert(5);
 ll.insert(10);
 ll.insert(23);
+
+stack.push(10);
+stack.push(20);
+stack.push(30);
+
 //ht.get("apple");
 
 // let promise = $.get("https://swapi.co/api/people/1");
@@ -63,4 +70,5 @@ setTimeout(() => {
   console.log(planet);
   console.log(person);
   console.log(ll);
+  console.log(stack);
 }, 5000);
