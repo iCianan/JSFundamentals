@@ -4,12 +4,14 @@ import { Person } from "./models/person";
 import { HashTable } from "./models/hashtable";
 import { LinkedList } from "./models/linkedList";
 import { Stack } from "./models/stack";
+import { BinarySearchTree } from "./models/binarysearchtree";
 
 let planet = new Planet();
 let person = new Person();
 let ht = new HashTable();
 let ll = new LinkedList();
 let stack = new Stack();
+let bst = new BinarySearchTree();
 
 ht.set("google", "Pixel");
 ht.set("apple", "iPhone");
@@ -23,6 +25,13 @@ ll.insert(23);
 stack.push(10);
 stack.push(20);
 stack.push(30);
+
+bst.insert(10);
+bst.insert(7);
+bst.insert(8);
+bst.insert(50);
+bst.insert(2);
+bst.insert(75);
 
 //ht.get("apple");
 
@@ -71,4 +80,5 @@ setTimeout(() => {
   console.log(person);
   console.log(ll);
   console.log(stack);
+  console.log(bst);
 }, 5000);
