@@ -6,7 +6,6 @@ export class BinarySearchTree {
   }
   insert(data) {
     let newNode = new Node(data);
-    debugger;
     if (!this.root) {
       this.root = newNode;
       return newNode;

@@ -5,6 +5,7 @@ import { HashTable } from "./models/hashtable";
 import { LinkedList } from "./models/linkedList";
 import { Stack } from "./models/stack";
 import { BinarySearchTree } from "./models/binarysearchtree";
+import { String } from "./models/string";
 
 let planet = new Planet();
 let person = new Person();
@@ -12,6 +13,7 @@ let ht = new HashTable();
 let ll = new LinkedList();
 let stack = new Stack();
 let bst = new BinarySearchTree();
+let string = new String();
 
 ht.set("google", "Pixel");
 ht.set("apple", "iPhone");
@@ -32,31 +34,6 @@ bst.insert(8);
 bst.insert(50);
 bst.insert(2);
 bst.insert(75);
-
-//ht.get("apple");
-
-// let promise = $.get("https://swapi.co/api/people/1");
-// promise.then(
-//     data => console.log('success: ', data),
-//     error => console.log('error: ', error)
-// );
-
-// console.log(promise);
-
-// let user = {
-//     name: 'Monkey D. Luffy',
-//     avatar: 'luffy.jpg'
-// };
-
-// let promises = $.post(
-//     "http://5b32a4fd82407e001413f1df.mockapi.io/api/v1/users",
-//     user
-// );
-
-// promises.then(
-//     data => console.log('data: ', data),
-//     error => console.log('error ', error)
-// );
 
 fetch("https://swapi.co/api/people/1")
   .then(response => response.json())
@@ -81,4 +58,5 @@ setTimeout(() => {
   console.log(ll);
   console.log(stack);
   console.log(bst);
+  console.log(string.reverse(["h", "e", "l", "l", "o"]));
 }, 5000);
