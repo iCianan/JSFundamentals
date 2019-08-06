@@ -38,11 +38,18 @@ function twoNumberSum(array, targetSum) {
 function twoNumHash(array, targetSum) {
   let results = {};
   for (let i of array) {
-      let potentialMatch = targetSum - array[i];
+      debugger;
+      let potentialMatch = targetSum - i;
       if (results.hasOwnProperty(potentialMatch)){
-        return [potentialMatch, array[i]];
+          
+          if (potentialMatch < i) {
+            return [potentialMatch, i];
+          } else {
+          return [i, potentialMatch];
+
+          }
       } else{
-          results[array[i]] = true;
+          results[i] = true;
       }
   }
   return [];
