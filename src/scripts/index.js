@@ -35,6 +35,19 @@ function twoNumberSum(array, targetSum) {
   return results;
 }
 
+function twoNumHash(array, targetSum) {
+  let results = {};
+  for (let i of array) {
+      let potentialMatch = targetSum - array[i];
+      if (results.hasOwnProperty(potentialMatch)){
+        return [potentialMatch, array[i]];
+      } else{
+          results[array[i]] = true;
+      }
+  }
+  return [];
+}
+
 //twoNumberSum(arr1, newNum);
 
 // ht.set("google", "Pixel");
@@ -76,6 +89,8 @@ function twoNumberSum(array, targetSum) {
 
 setTimeout(() => {
   console.log(twoNumberSum(arr1, newNum));
+    console.log(twoNumHash(arr1, newNum));
+
 
   // console.log(planet);
   // console.log(person);
