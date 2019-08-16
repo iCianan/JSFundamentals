@@ -1,59 +1,41 @@
-import $ from "jquery";
-import { Planet } from "./models/planet";
-import { Person } from "./models/person";
-import { HashTable } from "./models/hashtable";
-import { LinkedList } from "./models/linkedList";
-import { Stack } from "./models/stack";
-import { BinarySearchTree } from "./models/binarysearchtree";
-import { String } from "./models/string";
-import { TwoSum } from "./models/TwoSum";
+import $ from 'jquery';
+import { Planet } from './models/planet';
+import { Person } from './models/person';
+import { HashTable } from './models/hashtable';
+import { LinkedList } from './models/linkedList';
+import { Stack } from './models/stack';
+import { BinarySearchTree } from './models/binarysearchtree';
+import { BST } from './models/bst';
+import { String } from './models/string';
+import { TwoSum } from './models/TwoSum';
 
 let planet = new Planet();
 let person = new Person();
 let ht = new HashTable();
 let ll = new LinkedList();
 let stack = new Stack();
-let bst = new BinarySearchTree();
+let binarySearchTree = new BinarySearchTree();
 let string = new String();
+let bst = new BST(10);
 
-let arr1 = [3, 5, -4, 8, 11, 1, -1, 6];
+let arr1 = [ 3, 5, -4, 8, 11, 1, -1, 6 ];
 let newNum = 10;
 
-function twoNumberSum(array, targetSum) {
-  let results = [];
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] + array[j] === targetSum) {
-        if (array[i] < array[j]) {
-          return [array[i], array[j]];
-        } else if (array[i] > array[j]) {
-          return [array[j], array[i]];
-        }
-      }
-    }
-  }
-  return results;
-}
-
-function twoNumHash(array, targetSum) {
-  let results = {};
-  for (let i of array) {
-      debugger;
-      let potentialMatch = targetSum - i;
-      if (results.hasOwnProperty(potentialMatch)){
-          
-          if (potentialMatch < i) {
-            return [potentialMatch, i];
-          } else {
-          return [i, potentialMatch];
-
-          }
-      } else{
-          results[i] = true;
-      }
-  }
-  return [];
-}
+// function twoNumberSum(array, targetSum) {
+// 	let results = [];
+// 	for (let i = 0; i < array.length; i++) {
+// 		for (let j = i + 1; j < array.length; j++) {
+// 			if (array[i] + array[j] === targetSum) {
+// 				if (array[i] < array[j]) {
+// 					return [ array[i], array[j] ];
+// 				} else if (array[i] > array[j]) {
+// 					return [ array[j], array[i] ];
+// 				}
+// 			}
+// 		}
+// 	}
+// 	return results;
+// }
 
 //twoNumberSum(arr1, newNum);
 
@@ -72,9 +54,9 @@ function twoNumHash(array, targetSum) {
 
 // bst.insert(10);
 // bst.insert(7);
-// bst.insert(8);
-// bst.insert(50);
-// bst.insert(2);
+bst.insert(8);
+bst.insert(50);
+bst.insert(2);
 // bst.insert(75);
 
 // fetch("https://swapi.co/api/people/1")
@@ -95,14 +77,12 @@ function twoNumHash(array, targetSum) {
 //   .catch(error => console.log("error: ", error));
 
 setTimeout(() => {
-  console.log(twoNumberSum(arr1, newNum));
-    console.log(twoNumHash(arr1, newNum));
+	console.log(bst);
 
-
-  // console.log(planet);
-  // console.log(person);
-  // console.log(ll);
-  // console.log(stack);
-  // console.log(bst);
-  // console.log(string.reverse(["h", "e", "l", "l", "o"]));
+	// console.log(planet);
+	// console.log(person);
+	// console.log(ll);
+	// console.log(stack);
+	// console.log(bst);
+	// console.log(string.reverse(["h", "e", "l", "l", "o"]));
 }, 5000);
