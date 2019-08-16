@@ -6,7 +6,6 @@ import { LinkedList } from "./models/linkedList";
 import { Stack } from "./models/stack";
 import { BinarySearchTree } from "./models/binarysearchtree";
 import { String } from "./models/string";
-import { TwoSum } from "./models/TwoSum";
 
 let planet = new Planet();
 let person = new Person();
@@ -19,21 +18,7 @@ let string = new String();
 let arr1 = [3, 5, -4, 8, 11, 1, -1, 6];
 let newNum = 10;
 
-function twoNumberSum(array, targetSum) {
-  let results = [];
-  for (let i = 0; i < array.length; i++) {
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[i] + array[j] === targetSum) {
-        if (array[i] < array[j]) {
-          return [array[i], array[j]];
-        } else if (array[i] > array[j]) {
-          return [array[j], array[i]];
-        }
-      }
-    }
-  }
-  return results;
-}
+let results = string.twoNumberSum(arr1, newNum);
 
 //twoNumberSum(arr1, newNum);
 
@@ -57,28 +42,28 @@ function twoNumberSum(array, targetSum) {
 // bst.insert(2);
 // bst.insert(75);
 
-// fetch("https://swapi.co/api/people/1")
-//   .then(response => response.json())
-//   .then(data => {
-//     person.name = data.name;
-//     person.birthYear = data.birth_year;
-//     planet.url = data.homeworld;
-//     fetch(planet.url)
-//       .then(response => response.json())
-//       .then(data => {
-//         planet.name = data.name;
-//         planet.climate = data.climate;
-//         person.homePlanet = planet.name;
-//       })
-//       .catch(error => console.log("error: ", error));
-//   })
-//   .catch(error => console.log("error: ", error));
+fetch("https://swapi.co/api/people/1")
+  .then(response => response.json())
+  .then(data => {
+    person.name = data.name;
+    person.birthYear = data.birth_year;
+    planet.url = data.homeworld;
+    fetch(planet.url)
+      .then(response => response.json())
+      .then(data => {
+        planet.name = data.name;
+        planet.climate = data.climate;
+        person.homePlanet = planet.name;
+      })
+      .catch(error => console.log("error: ", error));
+  })
+  .catch(error => console.log("error: ", error));
 
 setTimeout(() => {
-  console.log(twoNumberSum(arr1, newNum));
+  console.log(results);
 
-  // console.log(planet);
-  // console.log(person);
+  console.log(planet);
+  console.log(person);
   // console.log(ll);
   // console.log(stack);
   // console.log(bst);
