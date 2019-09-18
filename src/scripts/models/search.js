@@ -11,7 +11,7 @@ export class Search {
 		let left = 0;
 		let midpoint = Math.floor((right + left) / 2);
 
-		while (left < right) {
+		while (left <= right) {
 			if (array[midpoint] === value) {
 				return midpoint;
 			} else if (array[midpoint] < value) {
