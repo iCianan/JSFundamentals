@@ -8,6 +8,14 @@ import { BinarySearchTree } from './models/binarysearchtree';
 import { BST } from './models/bst';
 import { String } from './models/string';
 import { TwoSum } from './models/TwoSum';
+import $ from 'jquery';
+import { Planet } from './models/planet';
+import { Person } from './models/person';
+import { HashTable } from './models/hashtable';
+import { LinkedList } from './models/linkedList';
+import { Stack } from './models/stack';
+import { BinarySearchTree } from './models/binarysearchtree';
+import { String } from './models/string';
 
 let planet = new Planet();
 let person = new Person();
@@ -76,22 +84,22 @@ bubbleSort(randomNumbers);
 // bst.insert(2);
 // bst.insert(75);
 
-// fetch("https://swapi.co/api/people/1")
-//   .then(response => response.json())
-//   .then(data => {
-//     person.name = data.name;
-//     person.birthYear = data.birth_year;
-//     planet.url = data.homeworld;
-//     fetch(planet.url)
-//       .then(response => response.json())
-//       .then(data => {
-//         planet.name = data.name;
-//         planet.climate = data.climate;
-//         person.homePlanet = planet.name;
-//       })
-//       .catch(error => console.log("error: ", error));
-//   })
-//   .catch(error => console.log("error: ", error));
+fetch('https://swapi.co/api/people/1')
+	.then((response) => response.json())
+	.then((data) => {
+		person.name = data.name;
+		person.birthYear = data.birth_year;
+		planet.url = data.homeworld;
+		fetch(planet.url)
+			.then((response) => response.json())
+			.then((data) => {
+				planet.name = data.name;
+				planet.climate = data.climate;
+				person.homePlanet = planet.name;
+			})
+			.catch((error) => console.log('error: ', error));
+	})
+	.catch((error) => console.log('error: ', error));
 
 setTimeout(() => {
 	console.log(randomNumbers);
