@@ -1,6 +1,6 @@
 import $ from 'jquery';
-import { Planet } from './models/planet';
 import { Person } from './models/person';
+
 import { HashTable } from './models/hashtable';
 import { LinkedList } from './models/linkedList';
 import { Stack } from './models/stack';
@@ -8,106 +8,69 @@ import { BinarySearchTree } from './models/binarysearchtree';
 import { BST } from './models/bst';
 import { String } from './models/string';
 import { TwoSum } from './models/TwoSum';
-import $ from 'jquery';
-import { Planet } from './models/planet';
-import { Person } from './models/person';
-import { HashTable } from './models/hashtable';
-import { LinkedList } from './models/linkedList';
-import { Stack } from './models/stack';
-import { BinarySearchTree } from './models/binarysearchtree';
-import { String } from './models/string';
 
-let planet = new Planet();
-let person = new Person();
-let ht = new HashTable();
-let ll = new LinkedList();
-let stack = new Stack();
-let binarySearchTree = new BinarySearchTree();
-let string = new String();
-let bst = new BST(10);
+import { Search } from './models/Search';
+let states = [
+	'Alaska',
+	'Alabama',
+	'Arkansas',
+	'American Samoa',
+	'Arizona',
+	'California',
+	'Colorado',
+	'Connecticut',
+	'District of Columbia',
+	'Delaware',
+	'Florida',
+	'Georgia',
+	'Guam',
+	'Hawaii',
+	'Iowa',
+	'Idaho',
+	'Illinois',
+	'Indiana',
+	'Kansas',
+	'Kentucky',
+	'Louisiana',
+	'Massachusetts',
+	'Maryland',
+	'Maine',
+	'Michigan',
+	'Minnesota',
+	'Missouri',
+	'Mississippi',
+	'Montana',
+	'North Carolina',
+	' North Dakota',
+	'Nebraska',
+	'New Hampshire',
+	'New Jersey',
+	'New Mexico',
+	'Nevada',
+	'New York',
+	'Ohio',
+	'Oklahoma',
+	'Oregon',
+	'Pennsylvania',
+	'Puerto Rico',
+	'Rhode Island',
+	'South Carolina',
+	'South Dakota',
+	'Tennessee',
+	'Texas',
+	'Utah',
+	'Virginia',
+	'Virgin Islands',
+	'Vermont',
+	'Washington',
+	'Wisconsin',
+	'West Virginia',
+	'Wyoming'
+];
+let search = new Search();
 
-let arr1 = [ 3, 5, -4, 8, 11, 1, -1, 6 ];
-let newNum = 10;
+//alert(states.indexOf('Michigan'));
+alert(search.linearSearch(states, 'Texas'));
+alert(search.binarySearch(states, 'Texas'));
 
-let randomNumbers = [ 3, 5, 2, 9 ];
-
-function bubbleSort(numbers) {
-	for (let i = numbers.length; i > 0; i--) {
-		for (let j = 0; j < i - 1; j++) {
-			if (numbers[j] > numbers[j + 1]) {
-				let temp = numbers[j];
-				numbers[j] = numbers[j + 1];
-				numbers[j + 1] = temp;
-			}
-		}
-	}
-	return numbers;
-}
-
-bubbleSort(randomNumbers);
-
-// function twoNumberSum(array, targetSum) {
-// 	let results = [];
-// 	for (let i = 0; i < array.length; i++) {
-// 		for (let j = i + 1; j < array.length; j++) {
-// 			if (array[i] + array[j] === targetSum) {
-// 				if (array[i] < array[j]) {
-// 					return [ array[i], array[j] ];
-// 				} else if (array[i] > array[j]) {
-// 					return [ array[j], array[i] ];
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return results;
-// }
-
-//twoNumberSum(arr1, newNum);
-
-// ht.set("google", "Pixel");
-// ht.set("apple", "iPhone");
-// ht.set("google", "Nexus 5x");
-// ht.get("google");
-
-// ll.insert(5);
-// ll.insert(10);
-// ll.insert(23);
-
-// stack.push(10);
-// stack.push(20);
-// stack.push(30);
-
-// bst.insert(10);
-// bst.insert(7);
-// bst.insert(8);
-// bst.insert(50);
-// bst.insert(2);
-// bst.insert(75);
-
-fetch('https://swapi.co/api/people/1')
-	.then((response) => response.json())
-	.then((data) => {
-		person.name = data.name;
-		person.birthYear = data.birth_year;
-		planet.url = data.homeworld;
-		fetch(planet.url)
-			.then((response) => response.json())
-			.then((data) => {
-				planet.name = data.name;
-				planet.climate = data.climate;
-				person.homePlanet = planet.name;
-			})
-			.catch((error) => console.log('error: ', error));
-	})
-	.catch((error) => console.log('error: ', error));
-
-setTimeout(() => {
-	console.log(randomNumbers);
-
-	// console.log(planet);
-	// console.log(person);
-	// console.log(ll);
-	// console.log(stack);
-	// console.log(bst);
-	// console.log(string.reverse(["h", "e", "l", "l", "o"]));
-}, 5000);
+//alert(states.includes('Texas'));
