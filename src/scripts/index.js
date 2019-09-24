@@ -8,6 +8,7 @@ import { BinarySearchTree } from './models/binarysearchtree';
 import { BST } from './models/bst';
 import { String } from './models/string';
 import { TwoSum } from './models/TwoSum';
+import { threeNumberSum } from './models/threeNumberSum';
 
 import { Search } from './models/Search';
 let states = [
@@ -68,9 +69,14 @@ let states = [
 	'Wyoming'
 ];
 let search = new Search();
+let num = [ 12, 3, 1, 2, -6, 5, -8, 6 ];
+let target = 0;
+let three = new threeNumberSum(num, target);
 
-//alert(states.indexOf('Michigan'));
-alert(search.linearSearch(states, 'Texas'));
-alert(search.binarySearch(states, 'Texas'));
+alert(three);
+
+// //alert(states.indexOf('Michigan'));
+// alert(search.linearSearch(states, 'Texas'));
+// alert(search.binarySearch(states, 'Texas'));
 
 //alert(states.includes('Texas'));
