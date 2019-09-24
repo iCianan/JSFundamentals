@@ -1,26 +1,38 @@
 export class Search {
-	linearSearch(array, value) {
-		for (let index = 0; index < array.length; index++) {
-			if (array[index] === value) return index;
-		}
-		return -1;
-	}
-	binarySearch(array, value) {
-		debugger;
-		let right = array.length - 1;
-		let left = 0;
-		let midpoint = Math.floor((right + left) / 2);
+  linearSearch(array, value) {
+    for (let index = 0; index < array.length; index++) {
+      if (array[index] === value) return index;
+    }
+    return -1;
+  }
+  binarySearch(array, value) {
+    let high = array.length - 1;
+    let low = 0;
+    let mid = Math.floor((high + low) / 2);
 
-		while (left <= right) {
-			if (array[midpoint] === value) {
-				return midpoint;
-			} else if (array[midpoint] < value) {
-				left = midpoint + 1;
-			} else if (array[midpoint] > value) {
-				right = midpoint - 1;
-			}
-			midpoint = Math.floor((right + left) / 2);
-		}
-		return -1;
-	}
+    while (low <= high) {
+      if (array[mid] === value) {
+        return mid;
+      } else if (array[mid] < value) {
+        low = mid + 1;
+      } else if (array[mid] > value) {
+        high = mid - 1;
+      }
+      mid = Math.floor((high + low) / 2);
+    }
+    return -1;
+  }
+  binarySearchRecursive(array, value, low, high) {
+    if (low > high) {
+      return -1;
+    }
+    let mid = Math.floor((low + high) / 2);
+    if (array[mid] < value) {
+      return this.binarySearchRecursive(array, value, mid + 1, high);
+    } else if (array[mid] > value) {
+      return this.binarySearchRecursive(array, value, low, mid - 1);
+    } else {
+      return mid;
+    }
+  }
 }
