@@ -21,15 +21,11 @@ export class Queue {
 			return undefined;
 		}
 		let current = this.first;
-		console.log(current);
-		this.first = current.next;
-		if (!this.first) {
-			this.last = this.first;
-			this.size--;
-			return current;
+		if (this.last === this.first) {
+			this.last = null;
 		}
+		this.first = current.next;
 		this.size--;
-		current.next = null;
 		return current;
 	}
 }
