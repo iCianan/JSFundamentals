@@ -123,4 +123,7 @@ graph.addEdge('Michigan', 'Pennsylvania');
 graph.addEdge('Pennsylvania', 'North Carolina');
 graph.addEdge('North Carolina', 'Florida');
 
-console.log(graph);
+graph.removeEdge('Michigan', 'Florida');
+let graphList = graph.adjacencyList;
+
+console.log(graphList['Michigan']);
