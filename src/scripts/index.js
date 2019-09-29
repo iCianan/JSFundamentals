@@ -13,64 +13,64 @@ import { singlelinkedlist } from './models/singlelinkedlist';
 import { Queue } from './models/queue';
 import { Graph } from './models/graph';
 
-// //import { Search } from "./models/Search";
-// let states = [
-// 	'Alaska',
-// 	'Alabama',
-// 	'Arkansas',
-// 	'American Samoa',
-// 	'Arizona',
-// 	'California',
-// 	'Colorado',
-// 	'Connecticut',
-// 	'District of Columbia',
-// 	'Delaware',
-// 	'Florida',
-// 	'Georgia',
-// 	'Guam',
-// 	'Hawaii',
-// 	'Iowa',
-// 	'Idaho',
-// 	'Illinois',
-// 	'Indiana',
-// 	'Kansas',
-// 	'Kentucky',
-// 	'Louisiana',
-// 	'Massachusetts',
-// 	'Maryland',
-// 	'Maine',
-// 	'Michigan',
-// 	'Minnesota',
-// 	'Missouri',
-// 	'Mississippi',
-// 	'Montana',
-// 	'North Carolina',
-// 	' North Dakota',
-// 	'Nebraska',
-// 	'New Hampshire',
-// 	'New Jersey',
-// 	'New Mexico',
-// 	'Nevada',
-// 	'New York',
-// 	'Ohio',
-// 	'Oklahoma',
-// 	'Oregon',
-// 	'Pennsylvania',
-// 	'Puerto Rico',
-// 	'Rhode Island',
-// 	'South Carolina',
-// 	'South Dakota',
-// 	'Tennessee',
-// 	'Texas',
-// 	'Utah',
-// 	'Virginia',
-// 	'Virgin Islands',
-// 	'Vermont',
-// 	'Washington',
-// 	'Wisconsin',
-// 	'West Virginia',
-// 	'Wyoming'
-// ];
+//import { Search } from "./models/Search";
+let states = [
+	'Alaska',
+	'Alabama',
+	'Arkansas',
+	'American Samoa',
+	'Arizona',
+	'California',
+	'Colorado',
+	'Connecticut',
+	'District of Columbia',
+	'Delaware',
+	'Florida',
+	'Georgia',
+	'Guam',
+	'Hawaii',
+	'Iowa',
+	'Idaho',
+	'Illinois',
+	'Indiana',
+	'Kansas',
+	'Kentucky',
+	'Louisiana',
+	'Massachusetts',
+	'Maryland',
+	'Maine',
+	'Michigan',
+	'Minnesota',
+	'Missouri',
+	'Mississippi',
+	'Montana',
+	'North Carolina',
+	'North Dakota',
+	'Nebraska',
+	'New Hampshire',
+	'New Jersey',
+	'New Mexico',
+	'Nevada',
+	'New York',
+	'Ohio',
+	'Oklahoma',
+	'Oregon',
+	'Pennsylvania',
+	'Puerto Rico',
+	'Rhode Island',
+	'South Carolina',
+	'South Dakota',
+	'Tennessee',
+	'Texas',
+	'Utah',
+	'Virginia',
+	'Virgin Islands',
+	'Vermont',
+	'Washington',
+	'Wisconsin',
+	'West Virginia',
+	'Wyoming'
+];
 // //let search = new Search();
 // let list = new singlelinkedlist();
 // let queue = new Queue();
@@ -99,7 +99,28 @@ import { Graph } from './models/graph';
 // alert(search.binarySearchRecursive(states, "Texas", 0, states.length - 1));
 
 //alert(states.includes('Texas'));
-let tk = 'Tokoyo';
+// let tk = 'Tokoyo';
+// let det = 'Detroit';
+// let lagos = 'Lagos';
 let graph = new Graph();
-graph.addVertex(tk);
-alert(graph[tk]);
+// graph.addVertex(tk);
+// graph.addVertex(det);
+// graph.addVertex(lagos);
+// graph.addEdge(tk, det);
+// graph.addEdge(tk, lagos);
+for (const state of states) {
+	graph.addVertex(state);
+}
+
+graph.addEdge('Alaska', 'California');
+graph.addEdge('California', 'Kansas');
+graph.addEdge('Kansas', 'Michigan');
+graph.addEdge('Kansas', 'Texas');
+graph.addEdge('Texas', 'Florida');
+graph.addEdge('Michigan', 'California');
+graph.addEdge('Michigan', 'Florida');
+graph.addEdge('Michigan', 'Pennsylvania');
+graph.addEdge('Pennsylvania', 'North Carolina');
+graph.addEdge('North Carolina', 'Florida');
+
+console.log(graph);
