@@ -1,22 +1,34 @@
-import { Node } from "./node";
-
+class Node {
+	constructor(val) {
+		this.val = val;
+		this.next = null;
+	}
+}
 export class Stack {
-  constructor() {
-    this.top = null;
-  }
+	constructor() {
+		this.top = null;
+	}
 
-  push(data) {
-    let newNode = new Node(data);
-    if (!this.top) {
-      this.top = newNode;
-      return newNode;
-    }
-    newNode.children.push(this.top);
-    this.top = newNode;
-    return newNode;
-  }
+	push(data) {
+		let newNode = new Node(data);
+		if (!this.top) {
+			this.top = newNode;
+			return newNode;
+		}
+		let current = this.top;
+		while (current.next) {
+			current = current.next;
+		}
+		current.next = newNode;
+		this.top = newNode;
+		return newNode;
+	}
 
-  pop() {}
-  peek() {}
-  isEmpty() {}
+	pop() {
+		if (!this.top) {
+			this.top = null;
+		}
+	}
+	peek() {}
+	isEmpty() {}
 }

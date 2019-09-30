@@ -139,3 +139,4 @@ graph.addEdge('North Carolina', 'Florida');
 // console.log(graphList['Kansas']);
 // console.log(graphList['California']);
 graph.depthFirstRecursive('Michigan');
+graph.depthFirstIterative('Michigan');

@@ -1,3 +1,4 @@
+import { Stack } from './stack';
 export class Graph {
 	constructor() {
 		this.adjacencyList = {};
@@ -41,5 +42,24 @@ export class Graph {
 				}
 			}
 		})(start);
+		return results;
+	}
+	depthFirstIterative(start) {
+		let stack = [];
+		let results = [];
+		let visted = {};
+		stack.push(start);
+		visted[start] = true;
+		while (stack.length > 0) {
+			let temp = stack.pop();
+			results.push(temp);
+			for (const neighbor of this.adjacencyList[temp]) {
+				if (!visted[neighbor]) {
+					visted[neighbor] = true;
+					stack.push(neighbor);
+				}
+			}
+		}
+		return results;
 	}
 }
