@@ -27,4 +27,19 @@ export class Graph {
 			delete this.adjacencyList[vertex];
 		}
 	}
+	depthFirstRecursive(start) {
+		let results = [];
+		let visted = {};
+		let adjacencyList = this.adjacencyList;
+		(function SearchNeighbors(v) {
+			if (!v) return null;
+			visted[v] = true;
+			results.push(v);
+			for (const neighbor of adjacencyList[v]) {
+				if (!visted[neighbor]) {
+					SearchNeighbors(neighbor);
+				}
+			}
+		})(start);
+	}
 }

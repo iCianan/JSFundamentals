@@ -130,11 +130,12 @@ graph.addEdge('North Carolina', 'Florida');
 // graph.removeEdge('Michigan', 'Florida');
 // graph.removeEdge('La', 'fish');
 
-// console.log(graphList['Michigan']);
-// console.log(graphList['Florida']);
-console.log(graphList['Kansas']);
-console.log(graphList['California']);
+// // console.log(graphList['Michigan']);
+// // console.log(graphList['Florida']);
+// console.log(graphList['Kansas']);
+// console.log(graphList['California']);
 
-graph.removeVertex('Kansas');
-console.log(graphList['Kansas']);
-console.log(graphList['California']);
+// graph.removeVertex('Kansas');
+// console.log(graphList['Kansas']);
+// console.log(graphList['California']);
+graph.depthFirstRecursive('Michigan');
