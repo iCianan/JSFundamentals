@@ -140,3 +140,4 @@ graph.addEdge('North Carolina', 'Florida');
 // console.log(graphList['California']);
 graph.depthFirstRecursive('Michigan');
 graph.depthFirstIterative('Michigan');
+graph.breathFirstSearch('Michigan');
