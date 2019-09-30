@@ -124,11 +124,17 @@ graph.addEdge('Michigan', 'Florida');
 graph.addEdge('Michigan', 'Pennsylvania');
 graph.addEdge('Pennsylvania', 'North Carolina');
 graph.addEdge('North Carolina', 'Florida');
-console.log(graphList['Michigan']);
-console.log(graphList['Florida']);
+// console.log(graphList['Michigan']);
+// console.log(graphList['Florida']);
 
-graph.removeEdge('Michigan', 'Florida');
-graph.removeEdge('La', 'fish');
+// graph.removeEdge('Michigan', 'Florida');
+// graph.removeEdge('La', 'fish');
 
-console.log(graphList['Michigan']);
-console.log(graphList['Florida']);
+// console.log(graphList['Michigan']);
+// console.log(graphList['Florida']);
+console.log(graphList['Kansas']);
+console.log(graphList['California']);
+
+graph.removeVertex('Kansas');
+console.log(graphList['Kansas']);
+console.log(graphList['California']);
