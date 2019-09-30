@@ -103,6 +103,8 @@ let states = [
 // let det = 'Detroit';
 // let lagos = 'Lagos';
 let graph = new Graph();
+let graphList = graph.adjacencyList;
+
 // graph.addVertex(tk);
 // graph.addVertex(det);
 // graph.addVertex(lagos);
@@ -122,8 +124,11 @@ graph.addEdge('Michigan', 'Florida');
 graph.addEdge('Michigan', 'Pennsylvania');
 graph.addEdge('Pennsylvania', 'North Carolina');
 graph.addEdge('North Carolina', 'Florida');
+console.log(graphList['Michigan']);
+console.log(graphList['Florida']);
 
 graph.removeEdge('Michigan', 'Florida');
-let graphList = graph.adjacencyList;
+graph.removeEdge('La', 'fish');
 
 console.log(graphList['Michigan']);
+console.log(graphList['Florida']);

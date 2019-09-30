@@ -15,16 +15,8 @@ export class Graph {
 	}
 	removeEdge(v1, v2) {
 		if (this.adjacencyList[v1] && this.adjacencyList[v2]) {
-			for (let i = 0; i < this.adjacencyList[v1].length; i++) {
-				if (this.adjacencyList[v1][i] == v2) {
-					this.adjacencyList[v1].splice(i, 1);
-				}
-			}
-			for (let i = 0; i < this.adjacencyList[v2].length; i++) {
-				if (this.adjacencyList[v2][i] == v1) {
-					this.adjacencyList[v2].splice(i, 1);
-				}
-			}
+			this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2);
+			this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1);
 		}
 	}
 }
