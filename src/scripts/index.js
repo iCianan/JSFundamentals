@@ -12,7 +12,7 @@ import { threeNumberSum } from './models/threeNumberSum';
 import { singlelinkedlist } from './models/singlelinkedlist';
 import { Queue } from './models/queue';
 import { Graph } from './models/graph';
-
+import { Sort } from './models/sort';
 //import { Search } from "./models/Search";
 let states = [
 	'Alaska',
@@ -102,29 +102,29 @@ let states = [
 // let tk = 'Tokoyo';
 // let det = 'Detroit';
 // let lagos = 'Lagos';
-let graph = new Graph();
-let graphList = graph.adjacencyList;
+// let graph = new Graph();
+// let graphList = graph.adjacencyList;
 
-// graph.addVertex(tk);
-// graph.addVertex(det);
-// graph.addVertex(lagos);
-// graph.addEdge(tk, det);
-// graph.addEdge(tk, lagos);
-for (const state of states) {
-	graph.addVertex(state);
-}
+// // graph.addVertex(tk);
+// // graph.addVertex(det);
+// // graph.addVertex(lagos);
+// // graph.addEdge(tk, det);
+// // graph.addEdge(tk, lagos);
+// for (const state of states) {
+// 	graph.addVertex(state);
+// }
 
-graph.addEdge('Alaska', 'California');
-graph.addEdge('California', 'Kansas');
-graph.addEdge('Kansas', 'Michigan');
-graph.addEdge('Kansas', 'Texas');
-graph.addEdge('Texas', 'Florida');
-graph.addEdge('Michigan', 'California');
-graph.addEdge('Michigan', 'Florida');
-graph.addEdge('Michigan', 'Pennsylvania');
-graph.addEdge('Pennsylvania', 'North Carolina');
-graph.addEdge('North Carolina', 'Florida');
-// console.log(graphList['Michigan']);
+// graph.addEdge('Alaska', 'California');
+// graph.addEdge('California', 'Kansas');
+// graph.addEdge('Kansas', 'Michigan');
+// graph.addEdge('Kansas', 'Texas');
+// graph.addEdge('Texas', 'Florida');
+// graph.addEdge('Michigan', 'California');
+// graph.addEdge('Michigan', 'Florida');
+// graph.addEdge('Michigan', 'Pennsylvania');
+// graph.addEdge('Pennsylvania', 'North Carolina');
+// graph.addEdge('North Carolina', 'Florida');
+// // console.log(graphList['Michigan']);
 // console.log(graphList['Florida']);
 
 // graph.removeEdge('Michigan', 'Florida');
@@ -136,8 +136,13 @@ graph.addEdge('North Carolina', 'Florida');
 // console.log(graphList['California']);
 
 // graph.removeVertex('Kansas');
-// console.log(graphList['Kansas']);
-// console.log(graphList['California']);
-graph.depthFirstRecursive('Michigan');
-graph.depthFirstIterative('Michigan');
-graph.breathFirstSearch('Michigan');
+// // console.log(graphList['Kansas']);
+// // console.log(graphList['California']);
+// graph.depthFirstRecursive('Michigan');
+// graph.depthFirstIterative('Michigan');
+// graph.breathFirstSearch('Michigan');
+let sort = new Sort();
+
+let arr = [ 23, 43, 37, 99 ];
+let num = [ 34, 43, 5, 37, 99, 38, 55, 87 ];
+sort.mergeSort(num);
