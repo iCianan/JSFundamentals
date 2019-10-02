@@ -9,7 +9,7 @@ import { BST } from "./models/bst";
 import { String } from "./models/string";
 import { TwoSum } from "./models/TwoSum";
 import { threeNumberSum } from "./models/threeNumberSum";
-import { singlelinkedlist } from "./models/singlelinkedlist";
+import { SingleLinkedList } from "./models/singlelinkedlist";
 import { Queue } from "./models/queue";
 import { Graph } from "./models/graph";
 import { Sort } from "./models/sort";
@@ -144,11 +144,34 @@ let states = [
 // graph.breathFirstSearch('Michigan');
 let sort = new Sort();
 let recursion = new Recursion();
+let list = new SingleLinkedList();
+let listtwo = new SingleLinkedList();
 
-// let arr = [23, 43, 37, 99];
-// let num = [34, 43, 5, 37, 99, 38, 55, 87];
-// sort.mergeSort(num);
-// recursion.arraySumIterative(num);
-let fib = recursion.getNthFib(7);
+for (const state of states) {
+  list.insert(state);
+}
+for (const state of states) {
+  listtwo.unshift(state);
+}
+console.log(list);
+//list.insert(2, "Detroit");
+// console.log(listtwo);
 
-console.log(fib);
+// console.log(list.pop());
+
+// console.log(list.shift());
+
+// // let arr = [23, 43, 37, 99];
+// // let num = [34, 43, 5, 37, 99, 38, 55, 87];
+// // sort.mergeSort(num);
+// // recursion.arraySumIterative(num);
+// let fib = recursion.getNthFib(7);
+
+// console.log(fib);
+// list.unshift("Alaska");
+// list.get(2);
+// debugger;
+// list.set(2, "Detroit");
+
+//
+// console.log(list);
