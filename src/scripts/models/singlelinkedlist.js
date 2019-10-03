@@ -69,17 +69,15 @@ export class SingleLinkedList {
     }
     return false;
   }
+
   insert(index, val) {
-    if (index < 0 || index >= this.length) return undefined;
+    if (index < 0 || index > this.length) return false;
+    if (index === 0) return this.unshift(val);
+    if (index === this.length) return this.push(val);
     let newNode = new Node(val);
-    let current = this.head;
-    let i = 0;
-    while (i !== index - 1) {
-      current = current.next;
-      i++;
-    }
-    current.next = newNode;
-    newNode.next = current;
+    let old = this.get(index - 1);
+    newNode.next = old.next;
+    old.next = newNode;
     this.length++;
   }
 }

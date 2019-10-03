@@ -7,12 +7,13 @@ import { Stack } from "./models/stack";
 import { BinarySearchTree } from "./models/binarysearchtree";
 import { BST } from "./models/bst";
 import { String } from "./models/string";
-import { TwoSum } from "./models/TwoSum";
-import { threeNumberSum } from "./models/threeNumberSum";
+import { ThreeLargestNumbers } from "./models/questions/ThreeLargestNumbers";
 import { SingleLinkedList } from "./models/singlelinkedlist";
+import { largestNumber } from "./models/questions/largestNumber";
+
 import { Queue } from "./models/queue";
 import { Graph } from "./models/graph";
-import { Sort } from "./models/sort";
+import { mergeSort } from "./models/sort";
 import { Recursion } from "./models/recursion";
 //import { Search } from "./models/Search";
 let states = [
@@ -142,27 +143,31 @@ let states = [
 // graph.depthFirstRecursive('Michigan');
 // graph.depthFirstIterative('Michigan');
 // graph.breathFirstSearch('Michigan');
-let sort = new Sort();
+
 let recursion = new Recursion();
 let list = new SingleLinkedList();
 let listtwo = new SingleLinkedList();
+for (const state of states) {
+  list.push(state);
+}
+// for (const state of states) {
+//   listtwo.unshift(state);
+// }
 
-for (const state of states) {
-  list.insert(state);
-}
-for (const state of states) {
-  listtwo.unshift(state);
-}
-console.log(list);
-//list.insert(2, "Detroit");
+list.insert(12, "Detroit");
+list.insert(0, "First");
 // console.log(listtwo);
 
 // console.log(list.pop());
 
 // console.log(list.shift());
-
+console.log(list);
 // // let arr = [23, 43, 37, 99];
-// // let num = [34, 43, 5, 37, 99, 38, 55, 87];
+let num = [3, 30, 34, 5, 9];
+//8755
+console.log(ThreeLargestNumbers(num));
+
+console.log(largestNumber(num));
 // // sort.mergeSort(num);
 // // recursion.arraySumIterative(num);
 // let fib = recursion.getNthFib(7);

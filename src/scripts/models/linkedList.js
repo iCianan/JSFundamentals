@@ -5,7 +5,7 @@ export class LinkedList {
     this.root = null;
   }
   insert(val) {
-    let newNode = new Node(val, 1);
+    let newNode = new Node(val);
     if (this.root === null) {
       this.root = newNode;
       return newNode;
