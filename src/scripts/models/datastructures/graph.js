@@ -1,4 +1,3 @@
-import { Stack } from './stack';
 export class Graph {
 	constructor() {
 		this.adjacencyList = {};

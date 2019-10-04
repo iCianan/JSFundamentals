@@ -1,77 +1,77 @@
-import $ from "jquery";
-import { Person } from "./models/person";
+import $ from 'jquery';
+import { Person } from './models/person';
 
-import { HashTable } from "./models/hashtable";
-import { LinkedList } from "./models/linkedList";
-import { Stack } from "./models/stack";
-import { BinarySearchTree } from "./models/binarysearchtree";
-import { BST } from "./models/bst";
-import { String } from "./models/string";
-import { ThreeLargestNumbers } from "./models/questions/ThreeLargestNumbers";
-import { SingleLinkedList } from "./models/singlelinkedlist";
-import { largestNumber } from "./models/questions/largestNumber";
+import { HashTable } from './models/hashtable';
+import { LinkedList } from './models/linkedList';
+import { Stack } from './models/datastructures/stack';
+import { BinarySearchTree } from './models/binarysearchtree';
+import { BST } from './models/bst';
+import { String } from './models/string';
+import { ThreeLargestNumbers } from './models/questions/ThreeLargestNumbers';
+import { SingleLinkedList } from './models/datastructures/singlyLinkedList';
+import { largestNumber } from './models/questions/largestNumber';
 
-import { Queue } from "./models/queue";
-import { Graph } from "./models/graph";
-import { mergeSort } from "./models/sort";
-import { Recursion } from "./models/recursion";
+import { Queue } from './models/datastructures/queue';
+import { Graph } from './models/datastructures/graph';
+import { mergeSort } from './models/algorithms/mergeSort';
+import { Recursion } from './models/recursion';
 //import { Search } from "./models/Search";
 let states = [
-  "Alaska",
-  "Alabama",
-  "Arkansas",
-  "American Samoa",
-  "Arizona",
-  "California",
-  "Colorado",
-  "Connecticut",
-  "District of Columbia",
-  "Delaware",
-  "Florida",
-  "Georgia",
-  "Guam",
-  "Hawaii",
-  "Iowa",
-  "Idaho",
-  "Illinois",
-  "Indiana",
-  "Kansas",
-  "Kentucky",
-  "Louisiana",
-  "Massachusetts",
-  "Maryland",
-  "Maine",
-  "Michigan",
-  "Minnesota",
-  "Missouri",
-  "Mississippi",
-  "Montana",
-  "North Carolina",
-  "North Dakota",
-  "Nebraska",
-  "New Hampshire",
-  "New Jersey",
-  "New Mexico",
-  "Nevada",
-  "New York",
-  "Ohio",
-  "Oklahoma",
-  "Oregon",
-  "Pennsylvania",
-  "Puerto Rico",
-  "Rhode Island",
-  "South Carolina",
-  "South Dakota",
-  "Tennessee",
-  "Texas",
-  "Utah",
-  "Virginia",
-  "Virgin Islands",
-  "Vermont",
-  "Washington",
-  "Wisconsin",
-  "West Virginia",
-  "Wyoming"
+	'Alaska',
+	'Alabama',
+	'Arkansas',
+	'American Samoa',
+	'Arizona',
+	'California',
+	'Colorado',
+	'Connecticut',
+	'District of Columbia',
+	'Delaware',
+	'Florida',
+	'Georgia',
+	'Guam',
+	'Hawaii',
+	'Iowa',
+	'Idaho',
+	'Illinois',
+	'Indiana',
+	'Kansas',
+	'Kentucky',
+	'Louisiana',
+	'Massachusetts',
+	'Maryland',
+	'Maine',
+	'Michigan',
+	'Minnesota',
+	'Missouri',
+	'Mississippi',
+	'Montana',
+	'North Carolina',
+	'North Dakota',
+	'Nebraska',
+	'New Hampshire',
+	'New Jersey',
+	'New Mexico',
+	'Nevada',
+	'New York',
+	'Ohio',
+	'Oklahoma',
+	'Oregon',
+	'Pennsylvania',
+	'Puerto Rico',
+	'Rhode Island',
+	'South Carolina',
+	'South Dakota',
+	'Tennessee',
+	'Texas',
+	'Utah',
+	'Virginia',
+	'Virgin Islands',
+	'Vermont',
+	'Washington',
+	'Wisconsin',
+	'West Virginia',
+	'Wyoming'
 ];
 // //let search = new Search();
 // let list = new singlelinkedlist();
@@ -146,28 +146,29 @@ let states = [
 
 let recursion = new Recursion();
 let list = new SingleLinkedList();
-let listtwo = new SingleLinkedList();
+//let listtwo = new SingleLinkedList();
 for (const state of states) {
-  list.push(state);
+	list.push(state);
 }
 // for (const state of states) {
 //   listtwo.unshift(state);
 // }
+list.remove(3);
 
-list.insert(12, "Detroit");
-list.insert(0, "First");
-// console.log(listtwo);
+// list.insert(12, "Detroit");
+// list.insert(0, "First");
+// // console.log(listtwo);
 
-// console.log(list.pop());
+// // console.log(list.pop());
 
-// console.log(list.shift());
-console.log(list);
-// // let arr = [23, 43, 37, 99];
-let num = [3, 30, 34, 5, 9];
-//8755
-console.log(ThreeLargestNumbers(num));
+// // console.log(list.shift());
+// console.log(list);
+// // // let arr = [23, 43, 37, 99];
+// let num = [3, 30, 34, 5, 9];
+// //8755
+// console.log(ThreeLargestNumbers(num));
 
-console.log(largestNumber(num));
+// console.log(largestNumber(num));
 // // sort.mergeSort(num);
 // // recursion.arraySumIterative(num);
 // let fib = recursion.getNthFib(7);
