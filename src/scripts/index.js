@@ -1,12 +1,7 @@
 import $ from 'jquery';
 import { Person } from './models/person';
 
-import { HashTable } from './models/hashtable';
-import { LinkedList } from './models/linkedList';
 import { Stack } from './models/datastructures/stack';
-import { BinarySearchTree } from './models/binarysearchtree';
-import { BST } from './models/bst';
-import { String } from './models/string';
 import { ThreeLargestNumbers } from './models/questions/ThreeLargestNumbers';
 import { SingleLinkedList } from './models/datastructures/singlyLinkedList';
 import { largestNumber } from './models/questions/largestNumber';
@@ -15,7 +10,6 @@ import { Queue } from './models/datastructures/queue';
 import { Graph } from './models/datastructures/graph';
 import { mergeSort } from './models/algorithms/mergeSort';
 import { Recursion } from './models/recursion';
-//import { Search } from "./models/Search";
 let states = [
 	'Alaska',
 	'Alabama',
@@ -146,14 +140,17 @@ let states = [
 
 let recursion = new Recursion();
 let list = new SingleLinkedList();
+let numberArray = [ 0, 1, 2, 3, 4, 5 ];
 //let listtwo = new SingleLinkedList();
-for (const state of states) {
-	list.push(state);
+for (const num of numberArray) {
+	list.push(num);
 }
+list.reverse();
+console.log(list);
 // for (const state of states) {
 //   listtwo.unshift(state);
 // }
-list.remove(3);
+//list.remove(3);
 
 // list.insert(12, "Detroit");
 // list.insert(0, "First");

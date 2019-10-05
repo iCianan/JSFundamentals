@@ -1,4 +1,4 @@
-export class singleLinkedList {
+export class SingleLinkedList {
 	constructor() {
 		this.head = null;
 		this.tail = null;
@@ -68,7 +68,7 @@ export class singleLinkedList {
 		}
 		return false;
 	}
-	insert(index, val) {
+	insertAtPosition(index, val) {
 		if (index < 0 || index > this.length) return false;
 		if (index === 0) return this.unshift(val);
 		if (index === this.length) return this.push(val);
@@ -88,6 +88,21 @@ export class singleLinkedList {
 		nodeBefore.next = removedNode.next;
 		this.length--;
 		return removedNode.data;
+	}
+	reverse() {
+		if (this.length <= 1) return -1;
+		let current = this.head;
+		this.head = this.tail;
+		this.tail = current;
+		let prev = null;
+		let next = null;
+
+		while (current) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
 	}
 }
 
