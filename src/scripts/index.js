@@ -9,7 +9,13 @@ import { largestNumber } from './models/questions/largestNumber';
 import { Queue } from './models/datastructures/queue';
 import { Graph } from './models/datastructures/graph';
 import { mergeSort } from './models/algorithms/mergeSort';
-import { Recursion } from './models/recursion';
+import { GetNthFib } from './models/recursion';
+import { BetterGetNthFib } from './models/recursion';
+import { BestGetNthFib } from './models/recursion';
+import { Fact } from './models/recursion';
+
+import { EvenNumbers } from './models/recursion';
+import { BetterEvenNumbers } from './models/recursion';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -138,7 +144,6 @@ let states = [
 // graph.depthFirstIterative('Michigan');
 // graph.breathFirstSearch('Michigan');
 
-let recursion = new Recursion();
 let list = new SingleLinkedList();
 let numberArray = [ 0, 1, 2, 3, 4, 5 ];
 //let listtwo = new SingleLinkedList();
@@ -151,12 +156,17 @@ console.log(list);
 //   listtwo.unshift(state);
 // }
 //list.remove(3);
-
+console.log(GetNthFib(11));
+console.log(BetterGetNthFib(11));
+console.log(BestGetNthFib(11));
 // list.insert(12, "Detroit");
-// list.insert(0, "First");
-// // console.log(listtwo);
-
-// // console.log(list.pop());
+// // list.insert(0, "First");
+// // // console.log(listtwo);
+// let array = [ 1, 8, 7, 2, 10, 14, 68 ];
+// debugger;
+// console.log(EvenNumbers(array));
+// console.log(BetterEvenNumbers(array));
+// // // console.log(list.pop());
 
 // // console.log(list.shift());
 // console.log(list);
@@ -168,7 +178,6 @@ console.log(list);
 // console.log(largestNumber(num));
 // // sort.mergeSort(num);
 // // recursion.arraySumIterative(num);
-// let fib = recursion.getNthFib(7);
 
 // console.log(fib);
 // list.unshift("Alaska");
