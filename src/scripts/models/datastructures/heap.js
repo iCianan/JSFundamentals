@@ -1,0 +1,61 @@
+export class MaxHeap {
+	constructor() {
+		this.data = [];
+	}
+	insert(val) {
+		this.data.push(val);
+		let index = this.data.length - 1;
+		let parentIndex = Math.floor((index - 1) / 2);
+		let temp = 0;
+		while (this.data[parentIndex] < this.data[index]) {
+			temp = this.data[parentIndex];
+			this.data[parentIndex] = this.data[index];
+			this.data[index] = temp;
+			index = parentIndex;
+			parentIndex = Math.floor((index - 1) / 2);
+		}
+	}
+}
+// Do not edit the class below except for the buildHeap,
+// siftDown, siftUp, peek, remove, and insert methods.
+// Feel free to add new properties and methods to the class.
+export class MinHeap {
+	constructor(array) {
+		this.heap = this.buildHeap(array);
+	}
+
+	buildHeap(array) {
+		if (!array) return [];
+		for (const i of array) this.insert(i);
+	}
+
+	siftDown() {
+		// Write your code here.
+	}
+
+	siftUp() {
+		// Write your code here.
+	}
+
+	peek() {
+		// Write your code here.
+	}
+
+	remove() {
+		// Write your code here.
+	}
+
+	insert(value) {
+		this.heap.push(value);
+		let index = this.heap.length - 1;
+		let parentIndex = Math.floor((index - 1) / 2);
+		let temp = 0;
+		while (this.heap[parentIndex] > this.heap[index]) {
+			temp = this.heap[parentIndex];
+			this.heap[parentIndex] = this.heap[index];
+			this.heap[index] = temp;
+			index = parentIndex;
+			parentIndex = Math.floor((index - 1) / 2);
+		}
+	}
+}

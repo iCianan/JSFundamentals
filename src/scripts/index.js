@@ -16,6 +16,8 @@ import { Fact } from './models/recursion';
 
 import { EvenNumbers } from './models/recursion';
 import { BetterEvenNumbers } from './models/recursion';
+import { MaxHeap } from './models/datastructures/heap';
+import { MinHeap } from './models/datastructures/heap';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -145,20 +147,30 @@ let states = [
 // graph.breathFirstSearch('Michigan');
 
 let list = new SingleLinkedList();
-let numberArray = [ 0, 1, 2, 3, 4, 5 ];
+let maxHeap = new MaxHeap();
+let minHeap = new MinHeap();
+let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
 //let listtwo = new SingleLinkedList();
 for (const num of numberArray) {
 	list.push(num);
+	maxHeap.insert(num);
 }
-list.reverse();
-console.log(list);
-// for (const state of states) {
-//   listtwo.unshift(state);
-// }
-//list.remove(3);
-console.log(GetNthFib(11));
-console.log(BetterGetNthFib(11));
-console.log(BestGetNthFib(11));
+
+console.log(maxHeap);
+minHeap.buildHeap(numberArray);
+minHeap.insert(77);
+console.log(minHeap);
+
+// list.reverse();
+// console.log(list);
+// // for (const state of states) {
+// //   listtwo.unshift(state);
+// // }
+// //list.remove(3);
+// console.log(GetNthFib(11));
+// console.log(BetterGetNthFib(11));
+// console.log(BestGetNthFib(11));
+
 // list.insert(12, "Detroit");
 // // list.insert(0, "First");
 // // // console.log(listtwo);
