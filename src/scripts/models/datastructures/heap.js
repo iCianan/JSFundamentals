@@ -15,6 +15,34 @@ export class MaxHeap {
 			parentIndex = Math.floor((index - 1) / 2);
 		}
 	}
+	extractMax() {
+		let temp = this.data[0];
+		this.data[0] = this.data[this.data.length - 1];
+		this.data[this.data.length - 1] = temp;
+		let parentIndex = 0;
+		let left = 2 * parentIndex + 1;
+		let right = 2 * parentIndex + 2;
+
+		while (this.data[left] > this.data[parentIndex] || this.data[right] > this.data[parentIndex]) {
+			if (this.data[left] > this.data[right]) {
+				temp = this.data[parentIndex];
+				this.data[parentIndex] = this.data[left];
+				this.data[left] = temp;
+				parentIndex = left;
+				left = 2 * parentIndex + 1;
+				right = 2 * parentIndex + 2;
+			} else {
+				temp = this.data[parentIndex];
+				this.data[parentIndex] = this.data[right];
+				this.data[right] = temp;
+				parentIndex = right;
+				left = 2 * parentIndex + 1;
+				right = 2 * parentIndex + 2;
+			}
+		}
+
+		return this.data.pop();
+	}
 }
 // Do not edit the class below except for the buildHeap,
 // siftDown, siftUp, peek, remove, and insert methods.

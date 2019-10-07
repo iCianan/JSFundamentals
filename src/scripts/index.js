@@ -160,7 +160,7 @@ console.log(maxHeap);
 minHeap.buildHeap(numberArray);
 minHeap.insert(77);
 console.log(minHeap);
-
+console.log(maxHeap.extractMax());
 // list.reverse();
 // console.log(list);
 // // for (const state of states) {
