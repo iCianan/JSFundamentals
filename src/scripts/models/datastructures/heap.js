@@ -16,32 +16,30 @@ export class MaxHeap {
 		}
 	}
 	extractMax() {
-		let temp = this.data[0];
-		this.data[0] = this.data[this.data.length - 1];
-		this.data[this.data.length - 1] = temp;
+		let max = this.data[0];
+		this.data[0] = this.data.pop();
+		this.siftDown(this.data[0]);
+		return max;
+	}
+	siftDown(parent) {
 		let parentIndex = 0;
 		let left = 2 * parentIndex + 1;
 		let right = 2 * parentIndex + 2;
-
 		while (this.data[left] > this.data[parentIndex] || this.data[right] > this.data[parentIndex]) {
 			if (this.data[left] > this.data[right]) {
-				temp = this.data[parentIndex];
 				this.data[parentIndex] = this.data[left];
-				this.data[left] = temp;
+				this.data[left] = parent;
 				parentIndex = left;
 				left = 2 * parentIndex + 1;
 				right = 2 * parentIndex + 2;
 			} else {
-				temp = this.data[parentIndex];
 				this.data[parentIndex] = this.data[right];
-				this.data[right] = temp;
+				this.data[right] = parent;
 				parentIndex = right;
 				left = 2 * parentIndex + 1;
 				right = 2 * parentIndex + 2;
 			}
 		}
-
-		return this.data.pop();
 	}
 }
 // Do not edit the class below except for the buildHeap,

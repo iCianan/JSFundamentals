@@ -148,19 +148,27 @@ let states = [
 
 let list = new SingleLinkedList();
 let maxHeap = new MaxHeap();
+let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
+let newArray = [ 55, 39, 41, 18, 27, 12, 33 ];
 //let listtwo = new SingleLinkedList();
 for (const num of numberArray) {
 	list.push(num);
 	maxHeap.insert(num);
 }
+for (const num of newArray) {
+	maxHeap1.insert(num);
+}
+debugger;
+console.log(maxHeap1);
+// minHeap.buildHeap(numberArray);
+// minHeap.insert(77);
+//console.log(maxHeap.extractMax());
+//console.log(maxHeap);
 
-console.log(maxHeap);
-minHeap.buildHeap(numberArray);
-minHeap.insert(77);
-console.log(minHeap);
-console.log(maxHeap.extractMax());
+maxHeap1.extractMax();
+
 // list.reverse();
 // console.log(list);
 // // for (const state of states) {
