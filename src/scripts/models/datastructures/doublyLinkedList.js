@@ -8,7 +8,6 @@ export class DoublyLinkedList {
 	//push to end of list
 	// Time O(1) | Space O(1)
 	push(val) {
-		debugger;
 		let newNode = new Node(val);
 		if (!this.head) {
 			this.head = newNode;
@@ -19,6 +18,35 @@ export class DoublyLinkedList {
 			this.tail = newNode;
 		}
 		return this.length++;
+	}
+	pop() {
+		if (!this.head) return undefined;
+		let oldTail = this.tail;
+		if (this.length === 1) {
+			this.head = null;
+			this.tail = null;
+		} else {
+			this.tail = oldTail.prev;
+			this.tail.next = null;
+			oldTail.prev = null;
+		}
+		this.length--;
+		return oldTail;
+	}
+	// remove node from beginning
+	shift() {
+		if (!this.head) return undefined;
+		let oldHead = this.head;
+		if (this.length == 1) {
+			this.head = null;
+			this.tail == null;
+		} else {
+			this.head = this.head.next;
+			this.head.prev = null;
+			oldHead.next = null;
+		}
+		this.length--;
+		return oldHead;
 	}
 }
 class Node {
