@@ -5,7 +5,10 @@ import { Stack } from './models/datastructures/stack';
 import { ThreeLargestNumbers } from './models/questions/ThreeLargestNumbers';
 import { SingleLinkedList } from './models/datastructures/singlyLinkedList';
 import { largestNumber } from './models/questions/largestNumber';
-
+import { countCharacters } from './models/questions/strings';
+import { betterCountCharacters } from './models/questions/strings';
+import { isAnagram } from './models/questions/strings';
+import { isAnagramBetter } from './models/questions/strings';
 import { Queue } from './models/datastructures/queue';
 import { Graph } from './models/datastructures/graph';
 import { mergeSort } from './models/algorithms/mergeSort';
@@ -161,14 +164,17 @@ for (const num of newArray) {
 	maxHeap1.insert(num);
 }
 debugger;
-console.log(maxHeap1);
-// minHeap.buildHeap(numberArray);
-// minHeap.insert(77);
-//console.log(maxHeap.extractMax());
-//console.log(maxHeap);
+// console.log(maxHeap1);
+// // minHeap.buildHeap(numberArray);
+// // minHeap.insert(77);
+// //console.log(maxHeap.extractMax());
+// //console.log(maxHeap);
 
-maxHeap1.extractMax();
-
+// maxHeap1.extractMax();
+countCharacters('Keenan');
+betterCountCharacters('Keenan');
+isAnagram('AB', 'BA');
+isAnagramBetter('anagram', 'nagaram');
 // list.reverse();
 // console.log(list);
 // // for (const state of states) {
