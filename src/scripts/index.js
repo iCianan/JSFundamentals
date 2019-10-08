@@ -4,6 +4,8 @@ import { Person } from './models/person';
 import { Stack } from './models/datastructures/stack';
 import { ThreeLargestNumbers } from './models/questions/ThreeLargestNumbers';
 import { SingleLinkedList } from './models/datastructures/singlyLinkedList';
+import { DoublyLinkedList } from './models/datastructures/doublyLinkedList';
+
 import { largestNumber } from './models/questions/largestNumber';
 import { countCharacters } from './models/questions/strings';
 import { betterCountCharacters } from './models/questions/strings';
@@ -150,6 +152,7 @@ let states = [
 // graph.breathFirstSearch('Michigan');
 
 let list = new SingleLinkedList();
+let dblList = new DoublyLinkedList();
 let maxHeap = new MaxHeap();
 let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
@@ -158,12 +161,12 @@ let newArray = [ 55, 39, 41, 18, 27, 12, 33 ];
 //let listtwo = new SingleLinkedList();
 for (const num of numberArray) {
 	list.push(num);
+	dblList.push(num);
 	maxHeap.insert(num);
 }
 for (const num of newArray) {
 	maxHeap1.insert(num);
 }
-debugger;
 // console.log(maxHeap1);
 // // minHeap.buildHeap(numberArray);
 // // minHeap.insert(77);
