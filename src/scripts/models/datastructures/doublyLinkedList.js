@@ -84,21 +84,11 @@ export class DoublyLinkedList {
 		return current;
 	}
 	set(index, val) {
-		debugger;
-		let newNode = new Node(val);
-		if (!this.head || index === this.length - 1) {
-			this.push(newNode);
-			this.length++;
-		}
 		let oldNode = this.get(index);
-		oldNode.prev.next = newNode;
-		oldNode.next.prev = newNode;
-		newNode.next = oldNode.next;
-		newNode.prev = oldNode.prev;
-
-		oldNode.next = null;
-		oldNode.prev = null;
-		return this;
+		if (oldNode !== null) {
+			oldNode.val = val;
+		}
+		return oldNode;
 	}
 }
 
