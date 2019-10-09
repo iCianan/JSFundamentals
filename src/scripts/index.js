@@ -167,6 +167,7 @@ for (const num of numberArray) {
 dblList.get(4);
 dblList.get(11);
 dblList.set(4, 99);
+dblList.insert(40, -6599);
 
 for (const num of newArray) {
 	maxHeap1.insert(num);

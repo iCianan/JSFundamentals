@@ -90,6 +90,23 @@ export class DoublyLinkedList {
 		}
 		return oldNode;
 	}
+	insert(index, val) {
+		debugger;
+		let newNode = new Node(val);
+		if (!this.head || index == this.tail - 1) {
+			this.push(newNode);
+			this.length++;
+		} else {
+			let oldNode = this.get(index);
+			if (oldNode !== null) {
+				oldNode.prev.next = newNode;
+				newNode.prev = oldNode.prev;
+				newNode.next = oldNode;
+				oldNode.prev = newNode;
+				this.length++;
+			}
+		}
+	}
 }
 
 class Node {
