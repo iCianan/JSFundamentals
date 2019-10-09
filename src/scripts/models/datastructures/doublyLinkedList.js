@@ -64,32 +64,27 @@ export class DoublyLinkedList {
 		return this;
 	}
 	get(index) {
-		if (index < 0 || index > this.length) return null;
+		if (index < 0 || index >= this.length) return null;
+		let current, counter;
 		if (index <= (this.length - 1) / 2) {
-			let current = this.head;
-			let counter = 0;
-			while (current) {
-				if (counter === index) {
-					return current;
-				} else {
-					counter++;
-					current = current.next;
-				}
+			current = this.head;
+			counter = 0;
+			while (counter !== index) {
+				counter++;
+				current = current.next;
 			}
 		} else {
-			let current = this.tail;
-			let counter = this.length - 1;
-			while (current) {
-				if (counter == index) {
-					return current;
-				} else {
-					counter--;
-					current = current.prev;
-				}
+			current = this.tail;
+			counter = this.length - 1;
+			while (counter !== index) {
+				counter--;
+				current = current.prev;
 			}
 		}
+		return current;
 	}
 }
+
 class Node {
 	constructor(val) {
 		this.val = val;
