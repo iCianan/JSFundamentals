@@ -164,8 +164,8 @@ for (const num of numberArray) {
 	dblList.push(num);
 	maxHeap.insert(num);
 }
-dblList.pop();
-dblList.shift();
+dblList.get(4);
+dblList.get(11);
 for (const num of newArray) {
 	maxHeap1.insert(num);
 }

@@ -1,3 +1,5 @@
+import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
+
 // Feel free to add new properties and methods to the class.
 export class DoublyLinkedList {
 	constructor() {
@@ -47,6 +49,45 @@ export class DoublyLinkedList {
 		}
 		this.length--;
 		return oldHead;
+	}
+	unshift(val) {
+		let newHead = new Node(val);
+		if (!this.head) {
+			this.head = newHead;
+			this.tail = newHead;
+		} else {
+			this.head.prev = newHead;
+			newHead.next = this.head;
+			this.head = newHead;
+		}
+		this.length++;
+		return this;
+	}
+	get(index) {
+		if (index < 0 || index > this.length) return null;
+		if (index <= (this.length - 1) / 2) {
+			let current = this.head;
+			let counter = 0;
+			while (current) {
+				if (counter === index) {
+					return current;
+				} else {
+					counter++;
+					current = current.next;
+				}
+			}
+		} else {
+			let current = this.tail;
+			let counter = this.length - 1;
+			while (current) {
+				if (counter == index) {
+					return current;
+				} else {
+					counter--;
+					current = current.prev;
+				}
+			}
+		}
 	}
 }
 class Node {
