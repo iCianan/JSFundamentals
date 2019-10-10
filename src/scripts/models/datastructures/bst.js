@@ -26,17 +26,12 @@ export class BST {
 		}
 	}
 	find(value) {
-		if (!this.root) return undefined;
+		if (!this.root) return false;
 		let current = this.root;
-		while (true) {
-			if (current.value === value) return current;
-			if (current.value > value) {
-				if (!current.left) return undefined;
-				else current = current.left;
-			} else {
-				if (!current.right) return undefined;
-				else current = current.right;
-			}
+		while (current) {
+			if (value < current.value) current = current.left;
+			else if (value > current.right) current = current.right;
+			else return true;
 		}
 	}
 	remove(value) {}
