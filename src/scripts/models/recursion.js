@@ -56,3 +56,12 @@ export function BetterEvenNumbers(array) {
 	if (lastNumber % 2 === 0) count++;
 	return count;
 }
+
+export function countNegatives(head) {
+	if (!head) return 0;
+	let listCount = countNegatives(head.next);
+	if (head.val < 0) listCount++;
+	return listCount;
+}
+
+export function findLargestNumber(root) {}

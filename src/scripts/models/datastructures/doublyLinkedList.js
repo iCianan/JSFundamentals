@@ -91,7 +91,6 @@ export class DoublyLinkedList {
 		return oldNode;
 	}
 	insert(index, val) {
-		debugger;
 		let newNode = new Node(val);
 		if (!this.head || index == this.tail - 1) {
 			this.push(newNode);

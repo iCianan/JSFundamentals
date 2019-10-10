@@ -17,10 +17,11 @@ import { mergeSort } from './models/algorithms/mergeSort';
 import { GetNthFib } from './models/recursion';
 import { BetterGetNthFib } from './models/recursion';
 import { BestGetNthFib } from './models/recursion';
-import { Fact } from './models/recursion';
+import { countNegatives } from './models/recursion';
 
 import { EvenNumbers } from './models/recursion';
 import { BetterEvenNumbers } from './models/recursion';
+import { BST } from './models/datastructures/bst';
 import { MaxHeap } from './models/datastructures/heap';
 import { MinHeap } from './models/datastructures/heap';
 let states = [
@@ -156,6 +157,7 @@ let dblList = new DoublyLinkedList();
 let maxHeap = new MaxHeap();
 let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
+let bst = new BST();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
 let newArray = [ 55, 39, 41, 18, 27, 12, 33 ];
 //let listtwo = new SingleLinkedList();
@@ -163,12 +165,14 @@ for (const num of numberArray) {
 	list.push(num);
 	dblList.push(num);
 	maxHeap.insert(num);
+	bst.insert(num);
 }
+console.log(bst.find(-5));
 dblList.get(4);
 dblList.get(11);
 dblList.set(4, 99);
 dblList.insert(40, -6599);
-
+countNegatives(dblList.head);
 for (const num of newArray) {
 	maxHeap1.insert(num);
 }
