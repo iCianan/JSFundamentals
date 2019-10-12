@@ -11,7 +11,8 @@ export class BST {
 			return this;
 		}
 		let current = this.root;
-		while (true) {
+		while (current) {
+			if (value === current.value) return undefined;
 			if (value < current.value) {
 				if (!current.left) {
 					current.left = newNode;
@@ -25,14 +26,15 @@ export class BST {
 			}
 		}
 	}
-	find(value) {
+	contains(value) {
 		if (!this.root) return false;
 		let current = this.root;
 		while (current) {
 			if (value < current.value) current = current.left;
-			else if (value > current.right) current = current.right;
+			else if (value > current.value) current = current.right;
 			else return true;
 		}
+		return false;
 	}
 	remove(value) {}
 }

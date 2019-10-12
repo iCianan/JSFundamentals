@@ -161,13 +161,14 @@ let bst = new BST();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
 let newArray = [ 55, 39, 41, 18, 27, 12, 33 ];
 //let listtwo = new SingleLinkedList();
-for (const num of numberArray) {
+for (const num of newArray) {
 	list.push(num);
 	dblList.push(num);
 	maxHeap.insert(num);
 	bst.insert(num);
 }
-console.log(bst.find(-5));
+
+console.log(bst.contains(41));
 dblList.get(4);
 dblList.get(11);
 dblList.set(4, 99);
