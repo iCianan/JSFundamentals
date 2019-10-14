@@ -14,13 +14,17 @@ import { isAnagramBetter } from './models/questions/strings';
 import { Queue } from './models/datastructures/queue';
 import { Graph } from './models/datastructures/graph';
 import { mergeSort } from './models/algorithms/mergeSort';
-import { GetNthFib } from './models/recursion';
-import { BetterGetNthFib } from './models/recursion';
-import { BestGetNthFib } from './models/recursion';
-import { countNegatives } from './models/recursion';
+import {
+	countNegatives,
+	EvenNumbers,
+	BetterEvenNumbers,
+	GetNthFib,
+	BetterGetNthFib,
+	BestGetNthFib
+} from './models/recursion';
+import { BFS } from './models/algorithms/BFS';
+import { DFSPreOrder, DFSPostOrder, DFSInOrder, DFSPostOrder2 } from './models/algorithms/DFS';
 
-import { EvenNumbers } from './models/recursion';
-import { BetterEvenNumbers } from './models/recursion';
 import { BST } from './models/datastructures/bst';
 import { MaxHeap } from './models/datastructures/heap';
 import { MinHeap } from './models/datastructures/heap';
@@ -159,7 +163,7 @@ let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
 let bst = new BST();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
-let newArray = [ 55, 39, 41, 18, 27, 12, 33 ];
+let newArray = [ 10, 15, 20, 6, 8, 3 ];
 //let listtwo = new SingleLinkedList();
 for (const num of newArray) {
 	list.push(num);
@@ -167,8 +171,14 @@ for (const num of newArray) {
 	maxHeap.insert(num);
 	bst.insert(num);
 }
+console.log(bst);
 
-console.log(bst.contains(41));
+console.log(BFS(bst.root));
+console.log(DFSPreOrder(bst.root, []));
+console.log(DFSInOrder(bst.root, []));
+console.log(DFSPostOrder(bst.root, []));
+console.log(DFSPostOrder2(bst.root, []));
+
 dblList.get(4);
 dblList.get(11);
 dblList.set(4, 99);

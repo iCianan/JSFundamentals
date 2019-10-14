@@ -65,3 +65,13 @@ export function countNegatives(head) {
 }
 
 export function findLargestNumber(root) {}
+
+export function removeKthNodeFromEnd(head, k) {
+	if (!head.next) return head;
+	let prev = removeKthNodeFromEnd(head.next, k);
+	k--;
+	if (k === 0) {
+		debugger;
+	}
+	return head;
+}

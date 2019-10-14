@@ -1,19 +1,39 @@
-export class Node {
-	constructor(name) {
-		this.name = name;
-		this.children = [];
+export function DFSPreOrder(root, array) {
+	let current = root;
+	function PreOrderHelper(node, array) {
+		array.push(node.value);
+		if (node.left) PreOrderHelper(node.left, array);
+		if (node.right) PreOrderHelper(node.right, array);
 	}
+	PreOrderHelper(current, array);
+	return array;
+}
 
-	addChild(name) {
-		this.children.push(new Node(name));
-		return this;
+export function DFSInOrder(root, array) {
+	let current = root;
+	function InOrderHelper(node, array) {
+		if (node.left) InOrderHelper(node.left, array);
+		array.push(node.value);
+		if (node.right) InOrderHelper(node.right, array);
 	}
-	//O(V + e) time | O(V) space
-	depthFirstSearch(array) {
-		array.push(this.name);
-		for (const child of this.children) {
-			child.depthFirstSearch(array);
-		}
-		return array;
+	InOrderHelper(current, array);
+	return array;
+}
+export function DFSPostOrder(root, array) {
+	let current = root;
+	function PostOrderHelper(node, array) {
+		if (node.left) PostOrderHelper(node.left, array);
+		if (node.right) PostOrderHelper(node.right, array);
+		array.push(node.value);
 	}
+	PostOrderHelper(current, array);
+	return array;
+}
+
+export function DFSPostOrder2(node, array) {
+	if (!node) return;
+	DFSPostOrder2(node.left, array);
+	DFSPostOrder2(node.right, array);
+	array.push(node.value);
+	return array;
 }
