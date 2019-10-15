@@ -37,3 +37,11 @@ export function DFSPostOrder2(node, array) {
 	array.push(node.value);
 	return array;
 }
+
+export function DFSInOrder2(node, array) {
+	if (!node) return;
+	DFSPostOrder2(node.left, array);
+	array.push(node.value);
+	DFSPostOrder2(node.right, array);
+	return array;
+}
