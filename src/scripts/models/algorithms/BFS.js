@@ -11,7 +11,7 @@ export function BFS(root) {
 	}
 	return visted;
 }
-breadthFirstSearch = (visted) => {
+const breadthFirstSearch = (visted) => {
 	let toVisit = [ this ];
 	while (toVisit.length) {
 		let current = toVisit.shift();

@@ -24,7 +24,7 @@ import {
 } from './models/recursion';
 import { BFS } from './models/algorithms/BFS';
 import { DFSPreOrder, DFSPostOrder, DFSInOrder, DFSPostOrder2 } from './models/algorithms/DFS';
-
+import { containsCommonItems, containsCommonItems2 } from './models/questions/containsCommonItems';
 import { BST } from './models/datastructures/bst';
 import { MaxHeap } from './models/datastructures/heap';
 import { MinHeap } from './models/datastructures/heap';
@@ -163,41 +163,45 @@ let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
 let bst = new BST();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
-let newArray = [ 10, 15, 20, 6, 8, 3 ];
+let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
 //let listtwo = new SingleLinkedList();
-for (const num of newArray) {
-	list.push(num);
-	dblList.push(num);
-	maxHeap.insert(num);
-	bst.insert(num);
-}
-console.log(bst);
 
-console.log(BFS(bst.root));
-console.log(DFSPreOrder(bst.root, []));
-console.log(DFSInOrder(bst.root, []));
-console.log(DFSPostOrder(bst.root, []));
-console.log(DFSPostOrder2(bst.root, []));
+console.log(containsCommonItems(newArray, numberArray));
+console.log(containsCommonItems2(newArray, numberArray));
 
-dblList.get(4);
-dblList.get(11);
-dblList.set(4, 99);
-dblList.insert(40, -6599);
-countNegatives(dblList.head);
-for (const num of newArray) {
-	maxHeap1.insert(num);
-}
-// console.log(maxHeap1);
-// // minHeap.buildHeap(numberArray);
-// // minHeap.insert(77);
-// //console.log(maxHeap.extractMax());
-// //console.log(maxHeap);
+// for (const num of newArray) {
+// 	list.push(num);
+// 	dblList.push(num);
+// 	maxHeap.insert(num);
+// 	bst.insert(num);
+// }
+// console.log(bst);
 
-// maxHeap1.extractMax();
-countCharacters('Keenan');
-betterCountCharacters('Keenan');
-isAnagram('AB', 'BA');
-isAnagramBetter('anagram', 'nagaram');
+// console.log(BFS(bst.root));
+// console.log(DFSPreOrder(bst.root, []));
+// console.log(DFSInOrder(bst.root, []));
+// console.log(DFSPostOrder(bst.root, []));
+// console.log(DFSPostOrder2(bst.root, []));
+
+// dblList.get(4);
+// dblList.get(11);
+// dblList.set(4, 99);
+// dblList.insert(40, -6599);
+// countNegatives(dblList.head);
+// for (const num of newArray) {
+// 	maxHeap1.insert(num);
+// }
+// // console.log(maxHeap1);
+// // // minHeap.buildHeap(numberArray);
+// // // minHeap.insert(77);
+// // //console.log(maxHeap.extractMax());
+// // //console.log(maxHeap);
+
+// // maxHeap1.extractMax();
+// countCharacters('Keenan');
+// betterCountCharacters('Keenan');
+// isAnagram('AB', 'BA');
+// isAnagramBetter('anagram', 'nagaram');
 // list.reverse();
 // console.log(list);
 // // for (const state of states) {
