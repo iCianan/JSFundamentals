@@ -28,6 +28,8 @@ import { containsCommonItems, containsCommonItems2 } from './models/questions/co
 import { BST } from './models/datastructures/bst';
 import { MaxHeap } from './models/datastructures/heap';
 import { MinHeap } from './models/datastructures/heap';
+import { reverse, reverseBetter, reverseBetter2, reverseBest } from './models/questions/reverseString';
+import { HashTable } from './models/datastructures/hashtable';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -168,7 +170,34 @@ let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
 
 console.log(containsCommonItems(newArray, numberArray));
 console.log(containsCommonItems2(newArray, numberArray));
+console.log(reverse('Hi my name is Keenan'));
 
+console.log(reverseBetter('Hi my name is Keenan'));
+console.log(reverseBetter2('Hi my name is Keenan'));
+console.log(reverseBest('Hi my name is Keenan'));
+
+let user = {
+	age: 85,
+	name: 'Roshi',
+	ki: true,
+	charge: () => {
+		console.log("It's morphing time!!");
+	}
+};
+user.age;
+user.charge();
+
+const betterUser = new Map();
+const set = new Set();
+
+let hash = new HashTable(50);
+hash.set('Camary', 'Toyota');
+hash.set('F150', 'Ford');
+hash.set('Civic', 'Honda');
+hash.set('Wrangler', 'Jeep');
+hash.get('Camary');
+hash.get('F150');
+hash.get('Civic');
 // for (const num of newArray) {
 // 	list.push(num);
 // 	dblList.push(num);
