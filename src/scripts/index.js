@@ -30,7 +30,7 @@ import { MaxHeap } from './models/datastructures/heap';
 import { MinHeap } from './models/datastructures/heap';
 import { reverse, reverseBetter, reverseBetter2, reverseBest } from './models/questions/reverseString';
 import { HashTable } from './models/datastructures/hashtable';
-import { repeatCharacters } from './models/questions/repeatCharacters';
+import { repeatCharacters, repeatChar } from './models/questions/repeatCharacters';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -198,7 +198,8 @@ hash.set('Civic', 'Honda');
 hash.set('Wrangler', 'Jeep');
 hash.set('Macbook', 'Apple');
 hash.keys();
-repeatCharacters(numberArray);
+console.log(repeatCharacters(numberArray));
+console.log(repeatChar(numberArray));
 // for (const num of newArray) {
 // 	list.push(num);
 // 	dblList.push(num);
