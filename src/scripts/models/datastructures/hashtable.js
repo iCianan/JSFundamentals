@@ -11,24 +11,32 @@ export class HashTable {
 		return hash;
 	}
 	get(index) {
-		debugger;
 		let newIndex = this._hash(index);
 		if (this.data[newIndex]) {
 			for (const i of this.data[newIndex]) {
 				if (i[0] === index) {
-					return i;
+					return i[1];
 				}
 			}
 		}
 		return undefined;
 	}
 	set(index, value) {
-		debugger;
 		let newIndex = this._hash(index);
 		if (!this.data[newIndex]) {
-			this.data[newIndex] = [ [ index, value ] ];
-		} else {
-			this.data[newIndex][0].push([ index, value ]);
+			this.data[newIndex] = [];
 		}
+		this.data[newIndex].push([ index, value ]);
+	}
+	keys() {
+		let keysArray = [];
+		if (this.data) {
+			for (const i in this.data) {
+				for (const j of this.data[i]) {
+					keysArray.push(j[0]);
+				}
+			}
+		}
+		return console.log(keysArray);
 	}
 }
