@@ -7,28 +7,35 @@ class Node {
 export class Stack {
 	constructor() {
 		this.top = null;
+		this.bottom = null;
+		this.length = 0;
 	}
 
 	push(data) {
 		let newNode = new Node(data);
 		if (!this.top) {
 			this.top = newNode;
-			return newNode;
+			this.bottom = newNode;
+		} else {
+			newNode.next = this.top;
+			this.top = newNode;
 		}
-		let current = this.top;
-		while (current.next) {
-			current = current.next;
-		}
-		current.next = newNode;
-		this.top = newNode;
-		return newNode;
+		this.length++;
 	}
-
 	pop() {
-		if (!this.top) {
-			this.top = null;
-		}
+		if (!this.top) return undefined;
+		if (this.top === this.bottom) this.bottom = null;
+		let oldTop = this.top;
+		this.top = oldTop.next;
+		oldTop.next = null;
+		this.length--;
+		return oldTop;
 	}
-	peek() {}
-	isEmpty() {}
+	peek() {
+		if (!this.top) return undefined;
+		return this.top;
+	}
+	isEmpty() {
+		return this.length ? false : true;
+	}
 }

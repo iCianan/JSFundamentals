@@ -169,24 +169,24 @@ let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
 let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
 //let listtwo = new SingleLinkedList();
 
-console.log(containsCommonItems(newArray, numberArray));
-console.log(containsCommonItems2(newArray, numberArray));
-console.log(reverse('Hi my name is Keenan'));
+// console.log(containsCommonItems(newArray, numberArray));
+// console.log(containsCommonItems2(newArray, numberArray));
+// console.log(reverse('Hi my name is Keenan'));
 
-console.log(reverseBetter('Hi my name is Keenan'));
-console.log(reverseBetter2('Hi my name is Keenan'));
-console.log(reverseBest('Hi my name is Keenan'));
+// console.log(reverseBetter('Hi my name is Keenan'));
+// console.log(reverseBetter2('Hi my name is Keenan'));
+// console.log(reverseBest('Hi my name is Keenan'));
 
-let user = {
-	age: 85,
-	name: 'Roshi',
-	ki: true,
-	charge: () => {
-		console.log("It's morphing time!!");
-	}
-};
-user.age;
-user.charge();
+// let user = {
+// 	age: 85,
+// 	name: 'Roshi',
+// 	ki: true,
+// 	charge: () => {
+// 		console.log("It's morphing time!!");
+// 	}
+// };
+// user.age;
+// user.charge();
 
 const betterUser = new Map();
 const set = new Set();
@@ -197,9 +197,23 @@ hash.set('F150', 'Ford');
 hash.set('Civic', 'Honda');
 hash.set('Wrangler', 'Jeep');
 hash.set('Macbook', 'Apple');
-hash.keys();
-console.log(repeatCharacters(numberArray));
-console.log(repeatChar(numberArray));
+//hash.keys();
+// console.log(repeatCharacters(numberArray));
+// console.log(repeatChar(numberArray));
+// console.log(repeatCharacters([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
+// console.log(repeatChar([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
+let stack = new Stack();
+for (const num of newArray) {
+	stack.push(num);
+}
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack);
 // for (const num of newArray) {
 // 	list.push(num);
 // 	dblList.push(num);

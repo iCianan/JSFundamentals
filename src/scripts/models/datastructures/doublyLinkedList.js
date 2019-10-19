@@ -106,6 +106,36 @@ export class DoublyLinkedList {
 			}
 		}
 	}
+	insertAgain(index, val) {
+		let newNode = new Node(val);
+		if (!this.head && index !== 1) {
+			this.head = newNode;
+			this.tail = newNode;
+			this.length++;
+		}
+		let current = this.head;
+		let count = 1;
+		while (current && count <= index) {
+			if (count == index) {
+				newNode.next = current;
+				newNode.prev = current.prev;
+				current.prev = newNode;
+				this.length++;
+			}
+			count++;
+			current = current.next;
+		}
+		return this;
+	}
+	remove(index) {
+		let nodeRemoved = this.get(index);
+		if (!nodeRemoved) return undefined;
+		nodeRemoved.prev.next = nodeRemoved.next;
+		nodeRemoved.next.prev = nodeRemoved.prev;
+		nodeRemoved.next = null;
+		nodeRemoved.prev = null;
+		this.length--;
+	}
 }
 
 class Node {
