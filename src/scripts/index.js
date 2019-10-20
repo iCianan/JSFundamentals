@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { Person } from './models/person';
 
-import { Stack } from './models/datastructures/stack';
+import { Stack, ArrayStack } from './models/datastructures/stack';
 import { ThreeLargestNumbers } from './models/questions/ThreeLargestNumbers';
 import { SingleLinkedList } from './models/datastructures/singlyLinkedList';
 import { DoublyLinkedList } from './models/datastructures/doublyLinkedList';
@@ -203,17 +203,14 @@ hash.set('Macbook', 'Apple');
 // console.log(repeatCharacters([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
 // console.log(repeatChar([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
 let stack = new Stack();
+let arrayStack = new ArrayStack();
 for (const num of newArray) {
 	stack.push(num);
+	arrayStack.push(num);
 }
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack);
+console.log(stack.bottom);
+console.log(arrayStack.bottom);
+
 // for (const num of newArray) {
 // 	list.push(num);
 // 	dblList.push(num);

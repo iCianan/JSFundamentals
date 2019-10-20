@@ -29,13 +29,62 @@ export class Stack {
 		this.top = oldTop.next;
 		oldTop.next = null;
 		this.length--;
-		return oldTop;
+		return oldTop.val;
 	}
 	peek() {
 		if (!this.top) return undefined;
-		return this.top;
+		return this.top.val;
 	}
 	isEmpty() {
 		return this.length ? false : true;
+	}
+}
+export class ArrayStack {
+	constructor() {
+		this.top = null;
+		this.bottom = null;
+		this.data = [];
+	}
+
+	push(val) {
+		this.data.push(val);
+	}
+	pop() {
+		if (this.data) return this.data.pop();
+	}
+	peek() {
+		let length = this.data.length;
+		if (this.data) return this.data[length - 1];
+	}
+	isEmpty() {
+		return this.data.length ? false : true;
+	}
+}
+
+export class BetterQueue {
+	constructor() {
+		this.eStack = new Stack();
+		this.dStack = new Stack();
+	}
+	peek() {
+		return this.eStack[this.eStack.length - 1];
+	}
+	enqueue(value) {
+		while (this.eStack.length > 0) {
+			this.dStack.push(this.eStack.pop());
+		}
+		this.eStack.push(value);
+		while (this.dStack.length > 0) {
+			this.eStack.push(this.dStack.pop());
+		}
+	}
+	dequeue() {
+		let x = this.eStack[this.eStack.length - 1];
+		this.eStack.pop();
+		return x;
+	}
+	empty() {
+		if (this.eStack.length > 0 || this.dStack.length > 0) return false;
+		else return true;
 	}
 }
