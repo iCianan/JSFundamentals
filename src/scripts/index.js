@@ -31,6 +31,7 @@ import { MinHeap } from './models/datastructures/heap';
 import { reverse, reverseBetter, reverseBetter2, reverseBest } from './models/questions/reverseString';
 import { HashTable } from './models/datastructures/hashtable';
 import { repeatCharacters, repeatChar } from './models/questions/repeatCharacters';
+import { BinarySearchTree } from './models/datastructures/binarySearchTree';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -165,8 +166,17 @@ let maxHeap = new MaxHeap();
 let maxHeap1 = new MaxHeap();
 let minHeap = new MinHeap();
 let bst = new BST();
+let binarySearchTree = new BinarySearchTree();
 let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
 let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
+let balancedTree = [ 12, 7, 10, 3, 20, 14, 35 ];
+
+for (const number of balancedTree) {
+	binarySearchTree.insert(number);
+}
+
+console.log(binarySearchTree.lookup(-7));
+
 //let listtwo = new SingleLinkedList();
 
 // console.log(containsCommonItems(newArray, numberArray));
@@ -180,36 +190,36 @@ let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
 // let user = {
 // 	age: 85,
 // 	name: 'Roshi',
-// 	ki: true,
-// 	charge: () => {
-// 		console.log("It's morphing time!!");
-// 	}
-// };
-// user.age;
-// user.charge();
+// // 	ki: true,
+// // 	charge: () => {
+// // 		console.log("It's morphing time!!");
+// // 	}
+// // };
+// // user.age;
+// // user.charge();
 
-const betterUser = new Map();
-const set = new Set();
+// const betterUser = new Map();
+// const set = new Set();
 
-let hash = new HashTable(5);
-hash.set('Camary', 'Toyota');
-hash.set('F150', 'Ford');
-hash.set('Civic', 'Honda');
-hash.set('Wrangler', 'Jeep');
-hash.set('Macbook', 'Apple');
-//hash.keys();
-// console.log(repeatCharacters(numberArray));
-// console.log(repeatChar(numberArray));
-// console.log(repeatCharacters([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
-// console.log(repeatChar([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
-let stack = new Stack();
-let arrayStack = new ArrayStack();
-for (const num of newArray) {
-	stack.push(num);
-	arrayStack.push(num);
-}
-console.log(stack.bottom);
-console.log(arrayStack.bottom);
+// let hash = new HashTable(5);
+// hash.set('Camary', 'Toyota');
+// hash.set('F150', 'Ford');
+// hash.set('Civic', 'Honda');
+// hash.set('Wrangler', 'Jeep');
+// hash.set('Macbook', 'Apple');
+// //hash.keys();
+// // console.log(repeatCharacters(numberArray));
+// // console.log(repeatChar(numberArray));
+// // console.log(repeatCharacters([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
+// // console.log(repeatChar([ 2, 5, 5, 2, 3, 5, 1, 2, 4 ]));
+// let stack = new Stack();
+// let arrayStack = new ArrayStack();
+// for (const num of newArray) {
+// 	stack.push(num);
+// 	arrayStack.push(num);
+// }
+// console.log(stack.bottom);
+// console.log(arrayStack.bottom);
 
 // for (const num of newArray) {
 // 	list.push(num);
