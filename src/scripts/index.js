@@ -175,7 +175,9 @@ for (const number of balancedTree) {
 	binarySearchTree.insert(number);
 }
 
-console.log(binarySearchTree.lookup(-7));
+//console.log(binarySearchTree);
+binarySearchTree.remove(12);
+console.log(binarySearchTree);
 
 //let listtwo = new SingleLinkedList();
 

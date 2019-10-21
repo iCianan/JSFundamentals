@@ -51,8 +51,9 @@ export class MinHeap {
 	}
 
 	buildHeap(array) {
-		if (!array) return [];
-		for (const i of array) this.insert(i);
+		for (const item of array) {
+			this.insert(item);
+		}
 	}
 
 	siftDown() {
@@ -60,7 +61,14 @@ export class MinHeap {
 	}
 
 	siftUp() {
-		// Write your code here.
+		let index = this.heap.length - 1;
+		let parentIndex = Math.floor((index - 1) / 2);
+		while (this.heap[parentIndex] > this.heap[index]) {
+			let temp = this.heap[parentIndex];
+			this.heap[parentIndex] = this.heap[index];
+			this.heap[index] = temp;
+			index = parentIndex;
+		}
 	}
 
 	peek() {
@@ -73,15 +81,7 @@ export class MinHeap {
 
 	insert(value) {
 		this.heap.push(value);
-		let index = this.heap.length - 1;
-		let parentIndex = Math.floor((index - 1) / 2);
-		let temp = 0;
-		while (this.heap[parentIndex] > this.heap[index]) {
-			temp = this.heap[parentIndex];
-			this.heap[parentIndex] = this.heap[index];
-			this.heap[index] = temp;
-			index = parentIndex;
-			parentIndex = Math.floor((index - 1) / 2);
-		}
+		this.siftUp();
+		return this;
 	}
 }
