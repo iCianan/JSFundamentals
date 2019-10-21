@@ -120,28 +120,28 @@ let states = [
 // let tk = 'Tokoyo';
 // let det = 'Detroit';
 // let lagos = 'Lagos';
-// let graph = new Graph();
-// let graphList = graph.adjacencyList;
+let graph = new Graph();
 
-// // graph.addVertex(tk);
-// // graph.addVertex(det);
-// // graph.addVertex(lagos);
-// // graph.addEdge(tk, det);
-// // graph.addEdge(tk, lagos);
-// for (const state of states) {
-// 	graph.addVertex(state);
-// }
+// graph.addVertex(tk);
+// graph.addVertex(det);
+// graph.addVertex(lagos);
+// graph.addEdge(tk, det);
+// graph.addEdge(tk, lagos);
+debugger;
+for (const state of states) {
+	graph.addVertex(state);
+}
 
-// graph.addEdge('Alaska', 'California');
-// graph.addEdge('California', 'Kansas');
-// graph.addEdge('Kansas', 'Michigan');
-// graph.addEdge('Kansas', 'Texas');
-// graph.addEdge('Texas', 'Florida');
-// graph.addEdge('Michigan', 'California');
-// graph.addEdge('Michigan', 'Florida');
-// graph.addEdge('Michigan', 'Pennsylvania');
-// graph.addEdge('Pennsylvania', 'North Carolina');
-// graph.addEdge('North Carolina', 'Florida');
+graph.addEdge('Alaska', 'California');
+graph.addEdge('California', 'Kansas');
+graph.addEdge('Kansas', 'Michigan');
+graph.addEdge('Kansas', 'Texas');
+graph.addEdge('Texas', 'Florida');
+graph.addEdge('Michigan', 'California');
+graph.addEdge('Michigan', 'Florida');
+graph.addEdge('Michigan', 'Pennsylvania');
+graph.addEdge('Pennsylvania', 'North Carolina');
+graph.addEdge('North Carolina', 'Florida');
 // // console.log(graphList['Michigan']);
 // console.log(graphList['Florida']);
 
