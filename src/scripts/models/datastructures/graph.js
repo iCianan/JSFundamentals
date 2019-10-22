@@ -6,6 +6,7 @@ export class Graph {
 	addVertex(node) {
 		if (!this.adjacentList[node]) {
 			this.adjacentList[node] = [];
+			this.numberOfNodes++;
 		}
 	}
 	addEdge(node1, node2) {

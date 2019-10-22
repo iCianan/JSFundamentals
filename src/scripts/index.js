@@ -20,7 +20,10 @@ import {
 	BetterEvenNumbers,
 	GetNthFib,
 	BetterGetNthFib,
-	BestGetNthFib
+	BestGetNthFib,
+	findFactorial,
+	findFact,
+	fibonacci
 } from './models/recursion';
 import { BFS } from './models/algorithms/BFS';
 import { DFSPreOrder, DFSPostOrder, DFSInOrder, DFSPostOrder2 } from './models/algorithms/DFS';
@@ -117,67 +120,70 @@ let states = [
 // alert(search.binarySearchRecursive(states, "Texas", 0, states.length - 1));
 
 //alert(states.includes('Texas'));
-// let tk = 'Tokoyo';
-// let det = 'Detroit';
-// let lagos = 'Lagos';
-let graph = new Graph();
+// // let tk = 'Tokoyo';
+// // let det = 'Detroit';
+// // let lagos = 'Lagos';
+// let graph = new Graph();
 
-// graph.addVertex(tk);
-// graph.addVertex(det);
-// graph.addVertex(lagos);
+// // graph.addVertex(tk);
+// // graph.addVertex(det);
+// // graph.addVertex(lagos);
 // graph.addEdge(tk, det);
-// graph.addEdge(tk, lagos);
-debugger;
-for (const state of states) {
-	graph.addVertex(state);
-}
+// // graph.addEdge(tk, lagos);
+// debugger;
+// for (const state of states) {
+// 	graph.addVertex(state);
+// }
 
-graph.addEdge('Alaska', 'California');
-graph.addEdge('California', 'Kansas');
-graph.addEdge('Kansas', 'Michigan');
-graph.addEdge('Kansas', 'Texas');
-graph.addEdge('Texas', 'Florida');
-graph.addEdge('Michigan', 'California');
-graph.addEdge('Michigan', 'Florida');
-graph.addEdge('Michigan', 'Pennsylvania');
-graph.addEdge('Pennsylvania', 'North Carolina');
-graph.addEdge('North Carolina', 'Florida');
-// // console.log(graphList['Michigan']);
-// console.log(graphList['Florida']);
-
-// graph.removeEdge('Michigan', 'Florida');
-// graph.removeEdge('La', 'fish');
-
-// // console.log(graphList['Michigan']);
+console.log(findFactorial(10));
+console.log(findFact(10));
+console.log(fibonacci(10));
+// graph.addEdge('Alaska', 'California');
+// graph.addEdge('California', 'Kansas');
+// graph.addEdge('Kansas', 'Michigan');
+// graph.addEdge('Kansas', 'Texas');
+// graph.addEdge('Texas', 'Florida');
+// graph.addEdge('Michigan', 'California');
+// graph.addEdge('Michigan', 'Florida');
+// graph.addEdge('Michigan', 'Pennsylvania');
+// graph.addEdge('Pennsylvania', 'North Carolina');
+// graph.addEdge('North Carolina', 'Florida');
+// // // console.log(graphList['Michigan']);
 // // console.log(graphList['Florida']);
-// console.log(graphList['Kansas']);
-// console.log(graphList['California']);
 
-// graph.removeVertex('Kansas');
+// // graph.removeEdge('Michigan', 'Florida');
+// // graph.removeEdge('La', 'fish');
+
+// // // console.log(graphList['Michigan']);
+// // // console.log(graphList['Florida']);
 // // console.log(graphList['Kansas']);
 // // console.log(graphList['California']);
-// graph.depthFirstRecursive('Michigan');
-// graph.depthFirstIterative('Michigan');
-// graph.breathFirstSearch('Michigan');
 
-let list = new SingleLinkedList();
-let dblList = new DoublyLinkedList();
-let maxHeap = new MaxHeap();
-let maxHeap1 = new MaxHeap();
-let minHeap = new MinHeap();
-let bst = new BST();
-let binarySearchTree = new BinarySearchTree();
-let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
-let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
-let balancedTree = [ 12, 7, 10, 3, 20, 14, 35 ];
+// // graph.removeVertex('Kansas');
+// // // console.log(graphList['Kansas']);
+// // // console.log(graphList['California']);
+// // graph.depthFirstRecursive('Michigan');
+// // graph.depthFirstIterative('Michigan');
+// // graph.breathFirstSearch('Michigan');
 
-for (const number of balancedTree) {
-	binarySearchTree.insert(number);
-}
+// let list = new SingleLinkedList();
+// let dblList = new DoublyLinkedList();
+// let maxHeap = new MaxHeap();
+// let maxHeap1 = new MaxHeap();
+// let minHeap = new MinHeap();
+// let bst = new BST();
+// let binarySearchTree = new BinarySearchTree();
+// let numberArray = [ 48, 12, 24, 7, 8, -5, 24, 391, 24, 56, 2, 6, 8, 41 ];
+// let newArray = [ 10, 15, 20, 5, 1, 3, 391 ];
+// let balancedTree = [ 12, 7, 10, 3, 20, 14, 35 ];
 
-//console.log(binarySearchTree);
-binarySearchTree.remove(12);
-console.log(binarySearchTree);
+// for (const number of balancedTree) {
+// 	binarySearchTree.insert(number);
+// }
+
+// //console.log(binarySearchTree);
+// binarySearchTree.remove(12);
+// console.log(binarySearchTree);
 
 //let listtwo = new SingleLinkedList();
 

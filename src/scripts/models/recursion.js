@@ -75,3 +75,27 @@ export function removeKthNodeFromEnd(head, k) {
 	}
 	return head;
 }
+
+export function findFactorial(number) {
+	if (number === 1) {
+		return 1;
+	}
+	return number * findFactorial(number - 1);
+}
+// 3 * 2 * 1 = 6
+//3
+export function findFact(number) {
+	let total = 1;
+	for (let i = 1; i <= number; i++) {
+		total *= i;
+	}
+	return total;
+}
+
+export function fibonacci(n) {
+	if (n < 2) {
+		return n;
+	}
+
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
