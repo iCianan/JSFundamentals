@@ -28,3 +28,20 @@ export function binarySearchRecursive(array, value, low, high) {
 		return mid;
 	}
 }
+
+function bsearch(array, value) {
+	let high = array.length - 1;
+	let low = 0;
+	let mid = Math.floor((high + low) / 2);
+	while (low <= high) {
+		if (array[mid] === value) {
+			return array[mid];
+		} else if (array[mid] > value) {
+			high = mid - 1;
+		} else {
+			low = mid + 1;
+		}
+		mid = Math.floor((high + low) / 2);
+	}
+	return false;
+}

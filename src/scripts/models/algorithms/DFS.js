@@ -45,3 +45,11 @@ export function DFSInOrder2(node, array) {
 	DFSPostOrder2(node.right, array);
 	return array;
 }
+
+export function DFSPreOrder2(node, array) {
+	if (!node) return;
+	array.push(node);
+	DFSPreOrder2(node.left, array);
+	DFSPreOrder2(node.right, array);
+	return array;
+}
