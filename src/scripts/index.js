@@ -35,6 +35,8 @@ import { reverse, reverseBetter, reverseBetter2, reverseBest } from './models/qu
 import { HashTable } from './models/datastructures/hashtable';
 import { repeatCharacters, repeatChar } from './models/questions/repeatCharacters';
 import { BinarySearchTree } from './models/datastructures/binarySearchTree';
+import { selectionSort } from './models/algorithms/selectionSort';
+import { insertionSort } from './models/algorithms/insertionSort';
 let states = [
 	'Alaska',
 	'Alabama',
@@ -95,7 +97,7 @@ let states = [
 // //let search = new Search();
 // let list = new singlelinkedlist();
 // let queue = new Queue();
-// let num = [ 12, 3, 1, 2, -6, 5, -8, 6 ];
+let num = [ 12, 3, 1, 2, -6, 5, -8, 6 ];
 // for (const key of states) {
 // 	list.insert(key);
 // 	queue.enqueue(key);
@@ -138,6 +140,10 @@ let states = [
 console.log(findFactorial(10));
 console.log(findFact(10));
 console.log(fibonacci(10));
+
+console.log(selectionSort(num));
+console.log(insertionSort(num));
+console.log(mergeSort(num));
 // graph.addEdge('Alaska', 'California');
 // graph.addEdge('California', 'Kansas');
 // graph.addEdge('Kansas', 'Michigan');
