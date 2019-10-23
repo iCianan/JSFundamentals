@@ -14,7 +14,7 @@
 //insertion sort
 
 //#6 temp records for the past 50 yr in canada
-radix sort or quick sort
+//radix sort or quick sort
 
 //#7 large user name database needs to be sorted..very random
 //heap sort - smaller space
