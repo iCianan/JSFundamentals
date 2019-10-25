@@ -96,4 +96,17 @@ export class BinarySearchTree {
 			}
 		}
 	}
+	bfs() {
+		let current = this.root;
+		let results = [];
+		let queue = [];
+		queue.push(current);
+		while (queue.length) {
+			current = queue.shift();
+			results.push(current);
+			if (current.left) queue.push(current.left);
+			if (current.right) queue.push(current.right);
+		}
+		return results;
+	}
 }

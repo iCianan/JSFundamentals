@@ -1,12 +1,11 @@
-export function DFSPreOrder(root, array) {
+export function DFSPreOrder(root) {
 	let current = root;
 	function PreOrderHelper(node, array) {
 		array.push(node.value);
 		if (node.left) PreOrderHelper(node.left, array);
 		if (node.right) PreOrderHelper(node.right, array);
 	}
-	PreOrderHelper(current, array);
-	return array;
+	return PreOrderHelper(current, []);
 }
 
 export function DFSInOrder(root, array) {
@@ -37,7 +36,7 @@ export function DFSPostOrder2(node, array) {
 	array.push(node.value);
 	return array;
 }
-
+//grabs the value in order
 export function DFSInOrder2(node, array) {
 	if (!node) return;
 	DFSPostOrder2(node.left, array);
@@ -45,7 +44,7 @@ export function DFSInOrder2(node, array) {
 	DFSPostOrder2(node.right, array);
 	return array;
 }
-
+// good for recreating a tree
 export function DFSPreOrder2(node, array) {
 	if (!node) return;
 	array.push(node);

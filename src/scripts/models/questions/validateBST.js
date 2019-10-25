@@ -30,3 +30,31 @@ function validateBSTHelper(tree, min, max) {
 	let left = validateBSTHelper(tree.left, min, tree.value);
 	return left && validateBSTHelper(tree.right, tree.value, max);
 }
+var isValidBST = function(root) {
+	if (!root) return true;
+
+	let toVisit = [];
+	let visted = [];
+	let current = root;
+	toVisit.push(current);
+	while (toVisit.length > 0) {
+		console.log(current);
+		current = toVisit.shift();
+		visted.push(current);
+		if (current.left) {
+			if (current.left.val >= current.val) {
+				return false;
+			} else {
+				toVisit.push(current.left);
+			}
+		}
+		if (current.right) {
+			if (current.right.val <= current.val) {
+				return false;
+			} else {
+				toVisit.push(current.right);
+			}
+		}
+	}
+	return true;
+};
