@@ -8,19 +8,20 @@
 
 //Sample Input:[2,3,1,-4,-4,2]
 // Sample Output: True
-
+// O(n) time | O(1) space
 export function hasSingleCycle(array) {
-  let numElementsVisted = 0;
-  let currentIdx = 0;
-  while (numElementsVisted < array.length) {
-    numElementsVisted++;
-    currentIdx = getNextIdx(currentIdx, array);
-  }
-  return currentIdx === 0;
+	let numElementsVisted = 0;
+	let currentIdx = 0;
+	while (numElementsVisted < array.length) {
+		if (numElementsVisted > 0 && currentIdx === 0) return false;
+		numElementsVisted++;
+		currentIdx = getNextIdx(currentIdx, array);
+	}
+	return currentIdx === 0;
 }
 
 function getNextIdx(currentIdx, array) {
-  const jump = array[currentIdx];
-  const nextIdx = (currentIdx + jump) % array.length;
-  return nextIdx >= 0 ? nextIdx : nextIdx + array.length;
+	const jump = array[currentIdx];
+	const nextIdx = (currentIdx + jump) % array.length;
+	return nextIdx >= 0 ? nextIdx : nextIdx + array.length;
 }

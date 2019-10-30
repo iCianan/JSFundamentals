@@ -23,11 +23,21 @@ export function fibonacciMaster() {
 		}
 	};
 }
-
+// O(n) time | O (n)  space
 export function fibPro(n, memo = []) {
 	if (memo[n !== undefined]) return memo[n];
 	if (n <= 2) return 1;
 	let results = fib(n - 1, memo) + fib(n - 2, memo);
 	memo[n] = results;
 	return results;
+}
+
+// O(n) time | O (1)  space
+export function tabFib(n) {
+	if (n <= 2) return 1;
+	let fibNums = [ 0, 1, 1 ];
+	for (let i = 0; i <= n; i++) {
+		fibNums[i] = fibNums[i - 1] + [ i - 2 ];
+	}
+	return fibNums[n];
 }
