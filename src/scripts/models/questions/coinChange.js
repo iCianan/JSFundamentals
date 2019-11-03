@@ -16,3 +16,76 @@ export function coinChange(denominations, target) {
 	}
 	return ways[target];
 }
+
+export function makeChange() {
+	let coins = [ 10, 6, 1 ];
+	return function changeMaker(n) {
+		if (n === 0) return 0;
+		let minCoins = Infinity;
+		for (const coin of coins) {
+			if (n - coin >= 0) {
+				let currentMinCoins = changeMaker(n - coin);
+				if (currentMinCoins < minCoins) {
+					minCoins = currentMinCoins;
+				}
+			}
+		}
+		return minCoins + 1;
+	};
+}
+
+private int[] coins = new int[]{10, 6, 1};
+public int makeChange(int c) {
+if (c == 0) return 0;
+int minCoins = Integer.MAX_VALUE;
+
+for (int coin : coins) {
+
+if (c - coin >= 0) {
+int currMinCoins = makeChange(c - coin);
+if (currMinCoins < minCoins)
+minCoins = currMinCoins;
+}
+}
+return minCoins + 1;
+}
+
+export function makeChangeMaster() {
+	let coins = [ 10, 6, 1 ],
+		cache = {};
+	return function changeMaker(n) {
+		if (n in cache) return cache[n];
+		if (n === 0) return 0;
+		let minCoins = Infinity;
+		for (const coin of coins) {
+			if (n - coin >= 0) {
+				cache[n] = changeMaker(n - coin);
+				if (cache[n] < minCoins) {
+					minCoins = cache[n];
+				}
+			}
+		}
+		cache[n] = minCoins + 1;
+		return cache[n];
+	};
+}
+
+export function makeChangeSensei() {
+	let coins = [ 10, 6, 1 ];
+	let cache = {};
+	return function changeMaker(n) {
+		if (n in cache) return cache[n];
+		if (n === 0) return 0;
+		let minCoins = Infinity;
+		for (const coin of coins) {
+			if (n - coin >= 0) {
+				cache[n] = changeMaker(n - coin);
+				if (cache[n] < minCoins) {
+					minCoins = cache[n];
+				}
+			}
+		}
+		cache[n] = minCoins + 1;
+		return cache[n];
+	};
+}
