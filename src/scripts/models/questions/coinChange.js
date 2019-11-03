@@ -34,22 +34,6 @@ export function makeChange() {
 	};
 }
 
-private int[] coins = new int[]{10, 6, 1};
-public int makeChange(int c) {
-if (c == 0) return 0;
-int minCoins = Integer.MAX_VALUE;
-
-for (int coin : coins) {
-
-if (c - coin >= 0) {
-int currMinCoins = makeChange(c - coin);
-if (currMinCoins < minCoins)
-minCoins = currMinCoins;
-}
-}
-return minCoins + 1;
-}
-
 export function makeChangeMaster() {
 	let coins = [ 10, 6, 1 ],
 		cache = {};
