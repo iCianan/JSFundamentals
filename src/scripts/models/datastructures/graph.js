@@ -15,5 +15,6 @@ export class Graph {
 			this.adjacentList[node2].push(node1);
 		}
 	}
-	showConnections() {}
+	BFS() {}
+	DFS() {}
 }
