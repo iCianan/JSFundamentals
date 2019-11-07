@@ -4,6 +4,8 @@ import { fibber, fib, fibonacciMaster, fibPro, tabFib, optimizedTabFib } from '.
 import { makeChange, makeChangeMaster } from './models/questions/coinChange';
 import { squareSubmatrix } from './models/questions/squareSubmatrix';
 import { getPermutations } from './models/questions/Permuatations';
+import { countdown, makeTree } from './models/recursion';
+import { DoublyLinkedList } from './models/datastructures/doublyLinkedList';
 
 // let numbers = [ 1, 2, 3, 1 ];
 // let anotherSet = [ 2, 3, 1, -4, -4, 2 ];
@@ -26,4 +28,26 @@ import { getPermutations } from './models/questions/Permuatations';
 
 // const subArray = [ [ 1, 1, 1, 0 ], [ 1, 1, 1, 1 ], [ 1, 1, 0, 0 ] ];
 // console.log(squareSubmatrix(subArray));
-console.log(getPermutations([ 1, 2, 3 ]));
+//countdown(10);
+let categories = [
+	{ id: 'animals', parent: null },
+	{ id: 'mammals', parent: 'animals' },
+	{ id: 'cats', parent: 'mammals' },
+	{ id: 'dogs', parent: 'mammals' },
+	{ id: 'chihuahua', parent: 'dogs' },
+	{ id: 'labrador', parent: 'dogs' },
+	{ id: 'persian', parent: 'cats' },
+	{ id: 'siamese', parent: 'cats' }
+];
+let list = new DoublyLinkedList();
+list.push(4);
+list.push(1);
+list.push(3);
+list.push(8);
+list.push(6);
+list.traverse(list.head);
+console.log(
+    JSON.stringify(
+        makeTree(categories, null))
+        , null, 3);
+//console.log(getPermutations([ 1, 2, 3 ]));

@@ -134,6 +134,13 @@ export class DoublyLinkedList {
 		nodeRemoved.prev = null;
 		this.length--;
 	}
+	traverse(node){
+		if(node){
+			console.log(node.val);
+			this.traverse(node.next);
+
+		}
+	}
 }
 
 class Node {
