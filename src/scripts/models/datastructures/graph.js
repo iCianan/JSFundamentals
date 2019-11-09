@@ -1,3 +1,4 @@
+import Queue from './queue';
 export class Graph {
 	constructor() {
 		this.numberOfNodes = 0;
@@ -15,6 +16,25 @@ export class Graph {
 			this.adjacentList[node2].push(node1);
 		}
 	}
-	BFS() {}
+	BFS(vertex) {
+		let explored = {};
+		let results = [];	
+		let queue = Queue();
+		explored[vertex] = true;
+		queue.enqueue(vertex);
+		let currentVertex;
+		while(queue.size !== 0){
+			currentVertex = queue.dequeue();
+			results.push(currentVertex);
+			for (const neighbor in this.adjacentList[vertex]) {
+				if (!explored[neighbor]) {
+					explored[neighbor] = true;
+					queue.enqueue(neighbor);						
+				}
+			}
+			
+		}
+		return results; 
+	}
 	DFS() {}
 }
