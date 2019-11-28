@@ -29,25 +29,29 @@ import { DoublyLinkedList } from './models/datastructures/doublyLinkedList';
 // const subArray = [ [ 1, 1, 1, 0 ], [ 1, 1, 1, 1 ], [ 1, 1, 0, 0 ] ];
 // console.log(squareSubmatrix(subArray));
 //countdown(10);
-let categories = [
-	{ id: 'animals', parent: null },
-	{ id: 'mammals', parent: 'animals' },
-	{ id: 'cats', parent: 'mammals' },
-	{ id: 'dogs', parent: 'mammals' },
-	{ id: 'chihuahua', parent: 'dogs' },
-	{ id: 'labrador', parent: 'dogs' },
-	{ id: 'persian', parent: 'cats' },
-	{ id: 'siamese', parent: 'cats' }
-];
-let list = new DoublyLinkedList();
-list.push(4);
-list.push(1);
-list.push(3);
-list.push(8);
-list.push(6);
-list.traverse(list.head);
-console.log(
-    JSON.stringify(
-        makeTree(categories, null))
-        , null, 3);
+// let categories = [
+// 	{ id: 'animals', parent: null },
+// 	{ id: 'mammals', parent: 'animals' },
+// 	{ id: 'cats', parent: 'mammals' },
+// 	{ id: 'dogs', parent: 'mammals' },
+// 	{ id: 'chihuahua', parent: 'dogs' },
+// 	{ id: 'labrador', parent: 'dogs' },
+// 	{ id: 'persian', parent: 'cats' },
+// 	{ id: 'siamese', parent: 'cats' }
+// ];
+// let list = new DoublyLinkedList();
+// list.push(4);
+// list.push(1);
+// list.push(3);
+// list.push(8);
+// list.push(6);
+// list.traverse(list.head);
+// console.log(
+//     JSON.stringify(
+//         makeTree(categories, null))
+// 		, null, 3);
+const x = fibonacciMaster()		
+
+console.log(x(50));
+console.log(fib(50));
 //console.log(getPermutations([ 1, 2, 3 ]));
